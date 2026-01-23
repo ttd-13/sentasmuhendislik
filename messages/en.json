@@ -1,0 +1,371 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "howWeWork": "How We Work",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Mechanical and Thermal Design Solutions for Electronic Products",
+      "subtitle": "Engineering solutions that reduce mechanical integration and thermal risks early in the product development process.",
+      "ctaPrimary": "Share Your Project",
+      "ctaSecondary": "Explore Our Services"
+    },
+    "problemSolution": {
+      "title": "Problems Solved at Design Stage",
+      "subtitle": "Prevent costly post-production revisions through early intervention",
+      "cards": {
+        "thermal": {
+          "title": "Thermal Risks",
+          "description": "Overheating issues detected at prototype stage lead to product delays and cost increases. We minimize these risks through thermal analysis at the design stage."
+        },
+        "mechanical": {
+          "title": "Mechanical Integration",
+          "description": "Incompatibilities between PCBs, sensors, and mechanical components cause production line stoppages. We guarantee compatibility through 3D integration and cable routing work."
+        },
+        "manufacturing": {
+          "title": "Manufacturability",
+          "description": "Design incompatibility with manufacturing processes means mold changes and additional costs. We increase production efficiency with DFM-compliant designs."
+        }
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Expert support at every stage of electronic product development",
+      "items": {
+        "enclosure": {
+          "title": "Enclosure Design",
+          "description": "Manufacturable and durable enclosure solutions that meet industrial design requirements."
+        },
+        "thermal": {
+          "title": "Thermal Analysis & Cooling",
+          "description": "Thermal performance optimization and cooling system design through CFD simulations."
+        },
+        "integration": {
+          "title": "Mechanical Integration",
+          "description": "3D integration of PCBs, cabling, and mechanical components with cable routing."
+        },
+        "prototyping": {
+          "title": "Rapid Prototyping",
+          "description": "Rapid prototype production with 3D printing and CNC, plus manufacturing support."
+        }
+      }
+    },
+    "whySentas": {
+      "title": "Why SENTAS Engineering?",
+      "subtitle": "Technical depth and practical experience combined",
+      "benefits": {
+        "riskReduction": "Risk reduction at design stage",
+        "fewerRedesigns": "Fewer revision cycles",
+        "manufacturability": "Manufacturability-focused design",
+        "thermalPerformance": "Optimized thermal performance",
+        "costEfficiency": "Reduced total cost of ownership",
+        "timeToMarket": "Faster time to market"
+      }
+    },
+    "howWeWork": {
+      "title": "How We Work",
+      "subtitle": "A systematic and transparent process",
+      "steps": {
+        "discovery": {
+          "title": "Discovery & Analysis",
+          "description": "We analyze project requirements, constraints, and goals in detail."
+        },
+        "design": {
+          "title": "Design & Simulation",
+          "description": "We develop design solutions through CAD models and CFD analyses."
+        },
+        "validation": {
+          "title": "Validation",
+          "description": "We validate the design through prototype tests and simulation results."
+        },
+        "delivery": {
+          "title": "Delivery & Support",
+          "description": "We provide continuous support along with production files and documentation."
+        }
+      }
+    },
+    "deliverables": {
+      "title": "Deliverables",
+      "items": [
+        "3D CAD models (in STEP, IGES formats)",
+        "Production drawings and tolerance analyses",
+        "Thermal analysis reports and recommendations",
+        "Material selection guides",
+        "Prototype test results",
+        "Production readiness documentation"
+      ]
+    },
+    "finalCta": {
+      "title": "Let's Develop Your Project Together",
+      "description": "If you need mechanical and thermal design support in your electronic product development process, contact us.",
+      "button": "Get in Touch"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Expert support at every stage of electronic product development",
+    "enclosure": {
+      "title": "Enclosure Design",
+      "whatWeDo": "What We Do",
+      "whatWeDoText": "We design manufacturable and durable enclosure solutions that balance your industrial design requirements with technical constraints. Considering IP protection classes, EMC requirements, and ergonomic factors, we combine aesthetics and functionality.",
+      "problems": "Problems We Solve",
+      "problemsList": [
+        "Failure to meet IP protection class requirements",
+        "EMC compliance issues",
+        "Designs incompatible with manufacturing processes",
+        "Errors in material selection",
+        "Assembly and maintenance access difficulties"
+      ],
+      "approach": "Our Approach",
+      "approachText": "Following DFM (Design for Manufacturing) principles, we develop designs suitable for manufacturing methods such as injection molding, CNC machining, and sheet metal processing. In material selection, we balance durability, cost, and manufacturing ease.",
+      "deliverables": "Deliverables",
+      "deliverablesList": [
+        "3D CAD models",
+        "Production drawings and tolerance analyses",
+        "Material recommendations and supplier information",
+        "Assembly guides"
+      ],
+      "whenToInvolve": "When to Contact Us",
+      "whenToInvolveText": "Reach out when your product concept is clear and industrial design work has begun. Early involvement minimizes design revisions."
+    },
+    "thermal": {
+      "title": "Thermal Analysis & Cooling",
+      "whatWeDo": "What We Do",
+      "whatWeDoText": "We analyze the thermal performance of your electronic products through CFD (Computational Fluid Dynamics) simulations, identify overheating risks, and design cooling solutions. We evaluate different cooling strategies such as natural convection, forced convection, and heat pipes.",
+      "problems": "Problems We Solve",
+      "problemsList": [
+        "Overheating detected at prototype stage",
+        "Insufficient thermal safety margins",
+        "Inefficient cooling systems",
+        "Fan selection and placement errors",
+        "Incorrect use of thermal interface materials"
+      ],
+      "approach": "Our Approach",
+      "approachText": "By performing thermal analysis through CFD simulations at the design stage, we predict temperature distributions of critical components. We determine cooling requirements and select the most suitable cooling strategy. We validate simulation results with prototype tests.",
+      "deliverables": "Deliverables",
+      "deliverablesList": [
+        "Thermal analysis reports",
+        "Temperature distribution maps",
+        "Cooling system design recommendations",
+        "Fan and heatsink selection guides"
+      ],
+      "whenToInvolve": "When to Contact Us",
+      "whenToInvolveText": "Start thermal analysis work when PCB placement and power consumption estimates are clear. Early analysis prevents thermal issues from being resolved with costly solutions."
+    },
+    "integration": {
+      "title": "Mechanical Integration & 3D Cable Routing",
+      "whatWeDo": "What We Do",
+      "whatWeDoText": "We perform 3D integration of PCBs, sensors, cabling, and mechanical components. We design cable routing and connection solutions to ensure assembly ease and reliability. We optimize cable placements for EMC compliance.",
+      "problems": "Problems We Solve",
+      "problemsList": [
+        "Incompatibilities between PCB and enclosure",
+        "Cable routing and connection issues",
+        "Interferences detected during assembly",
+        "EMC compliance issues",
+        "Maintenance and repair access difficulties"
+      ],
+      "approach": "Our Approach",
+      "approachText": "By evaluating PCB placement data and mechanical constraints together, we create 3D integration models. We design special channels and connection points for cable routing. We consider assembly sequence and access requirements.",
+      "deliverables": "Deliverables",
+      "deliverablesList": [
+        "3D integration models",
+        "Cable routing drawings",
+        "Assembly guides",
+        "EMC compliance recommendations"
+      ],
+      "whenToInvolve": "When to Contact Us",
+      "whenToInvolveText": "Start integration work while PCB design and mechanical enclosure design progress in parallel. Early coordination reduces revision costs."
+    },
+    "prototyping": {
+      "title": "Rapid Prototyping & Manufacturing Support",
+      "whatWeDo": "What We Do",
+      "whatWeDoText": "We perform rapid prototype production with 3D printing and CNC machining. We validate designs through prototype tests. We provide production readiness documentation and supplier coordination for transition to mass production.",
+      "problems": "Problems We Solve",
+      "problemsList": [
+        "Extended prototype production processes",
+        "Lack of design validation",
+        "Difficulties transitioning to mass production",
+        "Uncertainty in quality control standards",
+        "Supplier coordination issues"
+      ],
+      "approach": "Our Approach",
+      "approachText": "We accelerate design iterations by using rapid prototyping methods. We perform functional and mechanical validation through prototype tests. We facilitate transition to production by preparing necessary documentation for mass production.",
+      "deliverables": "Deliverables",
+      "deliverablesList": [
+        "Prototype parts",
+        "Test reports",
+        "Production readiness documentation",
+        "Supplier recommendations"
+      ],
+      "whenToInvolve": "When to Contact Us",
+      "whenToInvolveText": "Start prototype production at the design validation stage. Early prototyping enables early detection of design errors."
+    }
+  },
+  "howWeWork": {
+    "title": "How We Work",
+    "subtitle": "We take your project to success with a systematic and transparent process",
+    "workflow": {
+      "title": "Our Workflow",
+      "steps": {
+        "step1": {
+          "title": "1. Project Discovery & Requirements Analysis",
+          "items": [
+            "Gathering technical requirements",
+            "Identifying constraints (size, cost, time)",
+            "Clarifying goals",
+            "Reviewing existing design data"
+          ]
+        },
+        "step2": {
+          "title": "2. Concept Design & Evaluation",
+          "items": [
+            "Developing multiple design concepts",
+            "Technical and cost analysis of concepts",
+            "Selecting the most suitable concept",
+            "Client approval"
+          ]
+        },
+        "step3": {
+          "title": "3. Detailed Design & Simulation",
+          "items": [
+            "3D CAD modeling",
+            "Thermal analysis (CFD)",
+            "Structural analysis (FEA)",
+            "Preparing production drawings"
+          ]
+        },
+        "step4": {
+          "title": "4. Prototype & Validation",
+          "items": [
+            "Prototype production",
+            "Functional tests",
+            "Thermal tests",
+            "Design revisions"
+          ]
+        },
+        "step5": {
+          "title": "5. Production Readiness & Delivery",
+          "items": [
+            "Preparing production files",
+            "Documentation",
+            "Supplier coordination",
+            "Ongoing support"
+          ]
+        }
+      }
+    },
+    "communication": {
+      "title": "Communication & Revision Control",
+      "description": "You stay informed at every stage of your project through regular updates and transparent communication.",
+      "items": [
+        "Weekly progress reports",
+        "Revision-controlled design updates",
+        "Online meetings and technical discussions",
+        "Fast feedback cycles"
+      ]
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Expertise in mechanical and thermal design for electronic product development processes",
+    "story": {
+      "title": "Our Story",
+      "text": "SENTAS Engineering is an engineering firm specialized in mechanical integration and thermal design for electronic product development processes. We believe that problems identified and solved at the design stage prevent costly post-production revisions. Therefore, we accelerate our clients' product development processes and optimize their costs through early involvement and systematic approach."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": {
+        "technicalDepth": {
+          "title": "Technical Depth",
+          "description": "We solve technical problems with deep expertise in CFD, FEA, and CAD tools."
+        },
+        "practicalExperience": {
+          "title": "Practical Experience",
+          "description": "We have practical experience in real manufacturing processes and supplier coordination."
+        },
+        "systematicApproach": {
+          "title": "Systematic Approach",
+          "description": "We apply standard processes and quality controls in every project."
+        },
+        "transparentCommunication": {
+          "title": "Transparent Communication",
+          "description": "We provide regular and open communication about project progress and decisions."
+        }
+      }
+    },
+    "roles": {
+      "title": "Our Team",
+      "mechanicalEngineer": "Mechanical Design Engineer",
+      "thermalEngineer": "Thermal Analysis Engineer",
+      "projectManager": "Project Manager"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's develop your project together",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "projectSummary": "Project Summary",
+      "timeline": "Timeline",
+      "budget": "Budget (Optional)",
+      "submit": "Submit",
+      "sending": "Sending...",
+      "success": "Your message has been sent. We will get back to you as soon as possible.",
+      "error": "An error occurred. Please try again."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "q1": {
+          "question": "How long does a project take?",
+          "answer": "Project duration depends on the scope and complexity of the project. Simple enclosure designs take 2-4 weeks, thermal analysis projects take 3-6 weeks, and complex integration projects can take 6-12 weeks."
+        },
+        "q2": {
+          "question": "Which CAD formats do you use?",
+          "answer": "We use common CAD software such as SolidWorks, CATIA, Creo, and Fusion 360. Delivery formats include STEP, IGES, and native CAD formats."
+        },
+        "q3": {
+          "question": "Do you produce prototypes?",
+          "answer": "Yes, we produce prototypes with 3D printing and CNC machining. We also provide mass production support through our supplier network."
+        },
+        "q4": {
+          "question": "Can you work remotely?",
+          "answer": "Yes, we conduct a large portion of our projects remotely. We can travel for on-site meetings and tests when necessary."
+        }
+      }
+    },
+    "whatHappensNext": {
+      "title": "Next Steps",
+      "steps": {
+        "step1": {
+          "title": "1. Get in Touch",
+          "description": "Fill out the contact form or send an email."
+        },
+        "step2": {
+          "title": "2. Discussion",
+          "description": "Let's schedule a meeting to discuss your project in detail."
+        },
+        "step3": {
+          "title": "3. Quote & Start",
+          "description": "Let's prepare a detailed quote and start the project."
+        }
+      }
+    }
+  },
+  "footer": {
+    "company": "SENTAS Engineering",
+    "tagline": "Mechanical and Thermal Design Solutions for Electronic Products",
+    "links": {
+      "services": "Services",
+      "howWeWork": "How We Work",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "rights": "All rights reserved."
+  }
+}

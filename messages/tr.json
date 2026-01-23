@@ -1,0 +1,371 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "howWeWork": "Nasıl Çalışırız",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "home": {
+    "hero": {
+      "title": "Elektronik Ürünler için Mekanik ve Termal Tasarım Çözümleri",
+      "subtitle": "Ürün geliştirme süreçlerinde mekanik entegrasyon ve ısıl riskleri tasarım aşamasında azaltan mühendislik çözümleri.",
+      "ctaPrimary": "Projenizi Paylaşın",
+      "ctaSecondary": "Hizmetlerimizi İnceleyin"
+    },
+    "problemSolution": {
+      "title": "Tasarım Aşamasında Çözülen Sorunlar",
+      "subtitle": "Erken müdahale ile üretim sonrası maliyetli revizyonları önleyin",
+      "cards": {
+        "thermal": {
+          "title": "Termal Riskler",
+          "description": "Prototip aşamasında tespit edilen aşırı ısınma sorunları, ürün gecikmelerine ve maliyet artışlarına yol açar. Tasarım aşamasında termal analiz ile bu riskleri minimize ediyoruz."
+        },
+        "mechanical": {
+          "title": "Mekanik Entegrasyon",
+          "description": "PCB, sensörler ve mekanik bileşenlerin uyumsuzluğu, üretim hattında durmalara neden olur. 3D entegrasyon ve kablo yönlendirme çalışmalarımızla uyumluluğu garanti ediyoruz."
+        },
+        "manufacturing": {
+          "title": "Üretilebilirlik",
+          "description": "Tasarımın üretim süreçleriyle uyumsuzluğu, kalıp değişiklikleri ve ek maliyetler demektir. DFM prensiplerine uygun tasarımlarla üretim verimliliğini artırıyoruz."
+        }
+      }
+    },
+    "services": {
+      "title": "Hizmetlerimiz",
+      "subtitle": "Elektronik ürün geliştirme sürecinin her aşamasında destek",
+      "items": {
+        "enclosure": {
+          "title": "Kasa Tasarımı",
+          "description": "Endüstriyel tasarım gereksinimlerini karşılayan, üretilebilir ve dayanıklı kasa çözümleri."
+        },
+        "thermal": {
+          "title": "Termal Analiz ve Soğutma",
+          "description": "CFD simülasyonları ile ısıl performans optimizasyonu ve soğutma sistemleri tasarımı."
+        },
+        "integration": {
+          "title": "Mekanik Entegrasyon",
+          "description": "PCB, kablolama ve mekanik bileşenlerin 3D entegrasyonu ve kablo yönlendirme."
+        },
+        "prototyping": {
+          "title": "Hızlı Prototipleme",
+          "description": "3D yazdırma ve CNC ile hızlı prototip üretimi ve üretim desteği."
+        }
+      }
+    },
+    "whySentas": {
+      "title": "Neden SENTAS Mühendislik?",
+      "subtitle": "Teknik derinlik ve pratik deneyim bir arada",
+      "benefits": {
+        "riskReduction": "Tasarım aşamasında risk azaltma",
+        "fewerRedesigns": "Daha az revizyon döngüsü",
+        "manufacturability": "Üretilebilirlik odaklı tasarım",
+        "thermalPerformance": "Optimize edilmiş termal performans",
+        "costEfficiency": "Toplam sahip olma maliyetinde azalma",
+        "timeToMarket": "Daha hızlı pazara çıkış"
+      }
+    },
+    "howWeWork": {
+      "title": "Nasıl Çalışırız",
+      "subtitle": "Sistematik ve şeffaf bir süreç",
+      "steps": {
+        "discovery": {
+          "title": "Keşif ve Analiz",
+          "description": "Proje gereksinimlerini, kısıtları ve hedefleri detaylı olarak analiz ediyoruz."
+        },
+        "design": {
+          "title": "Tasarım ve Simülasyon",
+          "description": "CAD modelleri ve CFD analizleri ile tasarım çözümlerini geliştiriyoruz."
+        },
+        "validation": {
+          "title": "Doğrulama",
+          "description": "Prototip testleri ve simülasyon sonuçları ile tasarımı doğruluyoruz."
+        },
+        "delivery": {
+          "title": "Teslimat ve Destek",
+          "description": "Üretim dosyaları ve dokümantasyon ile birlikte sürekli destek sağlıyoruz."
+        }
+      }
+    },
+    "deliverables": {
+      "title": "Teslim Edilenler",
+      "items": [
+        "3D CAD modelleri (STEP, IGES formatlarında)",
+        "Üretim çizimleri ve tolerans analizleri",
+        "Termal analiz raporları ve öneriler",
+        "Malzeme seçim kılavuzları",
+        "Prototip test sonuçları",
+        "Üretim hazırlık dokümantasyonu"
+      ]
+    },
+    "finalCta": {
+      "title": "Projenizi Birlikte Geliştirelim",
+      "description": "Elektronik ürün geliştirme sürecinizde mekanik ve termal tasarım desteğine ihtiyacınız varsa, bizimle iletişime geçin.",
+      "button": "İletişime Geçin"
+    }
+  },
+  "services": {
+    "title": "Hizmetlerimiz",
+    "subtitle": "Elektronik ürün geliştirme sürecinin her aşamasında uzman desteği",
+    "enclosure": {
+      "title": "Kasa Tasarımı",
+      "whatWeDo": "Ne Yapıyoruz",
+      "whatWeDoText": "Endüstriyel tasarım gereksinimlerinizi teknik kısıtlarla dengeleyerek, üretilebilir ve dayanıklı kasa çözümleri tasarlıyoruz. IP koruma sınıfları, EMC gereksinimleri ve ergonomi faktörlerini göz önünde bulundurarak, estetik ve fonksiyonelliği bir araya getiriyoruz.",
+      "problems": "Çözdüğümüz Sorunlar",
+      "problemsList": [
+        "IP koruma sınıfı gereksinimlerinin karşılanamaması",
+        "EMC uyumluluk sorunları",
+        "Üretim süreçleriyle uyumsuz tasarımlar",
+        "Malzeme seçiminde hatalar",
+        "Montaj ve bakım erişim zorlukları"
+      ],
+      "approach": "Yaklaşımımız",
+      "approachText": "DFM (Design for Manufacturing) prensiplerine uygun olarak, enjeksiyon kalıplama, CNC işleme ve sac metal işleme gibi üretim yöntemlerine uygun tasarımlar geliştiriyoruz. Malzeme seçiminde dayanıklılık, maliyet ve üretim kolaylığını dengeliyoruz.",
+      "deliverables": "Teslim Edilenler",
+      "deliverablesList": [
+        "3D CAD modelleri",
+        "Üretim çizimleri ve tolerans analizleri",
+        "Malzeme önerileri ve tedarikçi bilgileri",
+        "Montaj kılavuzları"
+      ],
+      "whenToInvolve": "Ne Zaman Bize Başvurmalısınız",
+      "whenToInvolveText": "Ürün konseptiniz netleştiğinde ve endüstriyel tasarım çalışmaları başladığında bize ulaşın. Erken katılım, tasarım revizyonlarını minimize eder."
+    },
+    "thermal": {
+      "title": "Termal Analiz ve Soğutma",
+      "whatWeDo": "Ne Yapıyoruz",
+      "whatWeDoText": "CFD (Computational Fluid Dynamics) simülasyonları ile elektronik ürünlerinizin termal performansını analiz ediyor, aşırı ısınma risklerini tespit ediyor ve soğutma çözümleri tasarlıyoruz. Doğal konveksiyon, zorlanmış konveksiyon ve ısı boruları gibi farklı soğutma stratejilerini değerlendiriyoruz.",
+      "problems": "Çözdüğümüz Sorunlar",
+      "problemsList": [
+        "Prototip aşamasında tespit edilen aşırı ısınma",
+        "Termal güvenlik marjlarının yetersizliği",
+        "Soğutma sistemlerinin verimsizliği",
+        "Fan seçimi ve yerleşim hataları",
+        "Termal interface malzemelerinin yanlış kullanımı"
+      ],
+      "approach": "Yaklaşımımız",
+      "approachText": "Tasarım aşamasında CFD simülasyonları ile termal analiz yaparak, kritik bileşenlerin sıcaklık dağılımlarını öngörüyoruz. Soğutma gereksinimlerini belirleyip, en uygun soğutma stratejisini seçiyoruz. Prototip testleri ile simülasyon sonuçlarını doğruluyoruz.",
+      "deliverables": "Teslim Edilenler",
+      "deliverablesList": [
+        "Termal analiz raporları",
+        "Sıcaklık dağılım haritaları",
+        "Soğutma sistem tasarım önerileri",
+        "Fan ve heatsink seçim kılavuzları"
+      ],
+      "whenToInvolve": "Ne Zaman Bize Başvurmalısınız",
+      "whenToInvolveText": "PCB yerleşimi ve güç tüketimi tahminleri netleştiğinde termal analiz çalışmalarına başlayın. Erken analiz, termal sorunların maliyetli çözümlerle giderilmesini önler."
+    },
+    "integration": {
+      "title": "Mekanik Entegrasyon ve 3D Kablo Yönlendirme",
+      "whatWeDo": "Ne Yapıyoruz",
+      "whatWeDoText": "PCB, sensörler, kablolama ve mekanik bileşenlerin 3D entegrasyonunu gerçekleştiriyoruz. Kablo yönlendirme ve bağlantı çözümlerini tasarlayarak, montaj kolaylığı ve güvenilirlik sağlıyoruz. EMC uyumluluğu için kablo yerleşimlerini optimize ediyoruz.",
+      "problems": "Çözdüğümüz Sorunlar",
+      "problemsList": [
+        "PCB ve kasa arasındaki uyumsuzluklar",
+        "Kablo yönlendirme ve bağlantı sorunları",
+        "Montaj sırasında tespit edilen çakışmalar",
+        "EMC uyumluluk sorunları",
+        "Bakım ve onarım erişim zorlukları"
+      ],
+      "approach": "Yaklaşımımız",
+      "approachText": "PCB yerleşim verilerini ve mekanik kısıtları birlikte değerlendirerek, 3D entegrasyon modelleri oluşturuyoruz. Kablo yönlendirme için özel kanallar ve bağlantı noktaları tasarlıyoruz. Montaj sırası ve erişim gereksinimlerini göz önünde bulunduruyoruz.",
+      "deliverables": "Teslim Edilenler",
+      "deliverablesList": [
+        "3D entegrasyon modelleri",
+        "Kablo yönlendirme çizimleri",
+        "Montaj kılavuzları",
+        "EMC uyumluluk önerileri"
+      ],
+      "whenToInvolve": "Ne Zaman Bize Başvurmalısınız",
+      "whenToInvolveText": "PCB tasarımı ve mekanik kasa tasarımı paralel ilerlerken entegrasyon çalışmalarına başlayın. Erken koordinasyon, revizyon maliyetlerini düşürür."
+    },
+    "prototyping": {
+      "title": "Hızlı Prototipleme ve Üretim Desteği",
+      "whatWeDo": "Ne Yapıyoruz",
+      "whatWeDoText": "3D yazdırma ve CNC işleme ile hızlı prototip üretimi gerçekleştiriyoruz. Prototip testleri ile tasarım doğrulaması yapıyoruz. Seri üretime geçiş için üretim hazırlık dokümantasyonu ve tedarikçi koordinasyonu sağlıyoruz.",
+      "problems": "Çözdüğümüz Sorunlar",
+      "problemsList": [
+        "Prototip üretim süreçlerinin uzaması",
+        "Tasarım doğrulama eksikliği",
+        "Seri üretime geçiş zorlukları",
+        "Kalite kontrol standartlarının belirsizliği",
+        "Tedarikçi koordinasyon sorunları"
+      ],
+      "approach": "Yaklaşımımız",
+      "approachText": "Hızlı prototipleme yöntemlerini kullanarak, tasarım iterasyonlarını hızlandırıyoruz. Prototip testleri ile fonksiyonel ve mekanik doğrulama yapıyoruz. Seri üretim için gerekli dokümantasyonu hazırlayarak, üretim sürecine geçişi kolaylaştırıyoruz.",
+      "deliverables": "Teslim Edilenler",
+      "deliverablesList": [
+        "Prototip parçalar",
+        "Test raporları",
+        "Üretim hazırlık dokümantasyonu",
+        "Tedarikçi önerileri"
+      ],
+      "whenToInvolve": "Ne Zaman Bize Başvurmalısınız",
+      "whenToInvolveText": "Tasarım doğrulama aşamasında prototip üretimine başlayın. Erken prototipleme, tasarım hatalarının erken tespitini sağlar."
+    }
+  },
+  "howWeWork": {
+    "title": "Nasıl Çalışırız",
+    "subtitle": "Sistematik ve şeffaf bir süreç ile projenizi başarıya taşıyoruz",
+    "workflow": {
+      "title": "Çalışma Sürecimiz",
+      "steps": {
+        "step1": {
+          "title": "1. Proje Keşfi ve Gereksinim Analizi",
+          "items": [
+            "Teknik gereksinimlerin toplanması",
+            "Kısıtların belirlenmesi (boyut, maliyet, zaman)",
+            "Hedeflerin netleştirilmesi",
+            "Mevcut tasarım verilerinin incelenmesi"
+          ]
+        },
+        "step2": {
+          "title": "2. Konsept Tasarım ve Değerlendirme",
+          "items": [
+            "Birden fazla tasarım konsepti geliştirme",
+            "Konseptlerin teknik ve maliyet analizi",
+            "En uygun konseptin seçilmesi",
+            "Müşteri onayı"
+          ]
+        },
+        "step3": {
+          "title": "3. Detaylı Tasarım ve Simülasyon",
+          "items": [
+            "3D CAD modelleme",
+            "Termal analiz (CFD)",
+            "Yapısal analiz (FEA)",
+            "Üretim çizimleri hazırlama"
+          ]
+        },
+        "step4": {
+          "title": "4. Prototip ve Doğrulama",
+          "items": [
+            "Prototip üretimi",
+            "Fonksiyonel testler",
+            "Termal testler",
+            "Tasarım revizyonları"
+          ]
+        },
+        "step5": {
+          "title": "5. Üretim Hazırlığı ve Teslimat",
+          "items": [
+            "Üretim dosyalarının hazırlanması",
+            "Dokümantasyon",
+            "Tedarikçi koordinasyonu",
+            "Sürekli destek"
+          ]
+        }
+      }
+    },
+    "communication": {
+      "title": "İletişim ve Revizyon Kontrolü",
+      "description": "Düzenli güncellemeler ve şeffaf iletişim ile projenizin her aşamasında bilgi sahibi olursunuz.",
+      "items": [
+        "Haftalık ilerleme raporları",
+        "Revizyon kontrollü tasarım güncellemeleri",
+        "Online toplantılar ve teknik görüşmeler",
+        "Hızlı geri bildirim döngüleri"
+      ]
+    }
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "subtitle": "Elektronik ürün geliştirme süreçlerinde mekanik ve termal tasarım uzmanlığı",
+    "story": {
+      "title": "Hikayemiz",
+      "text": "SENTAS Mühendislik, elektronik ürün geliştirme süreçlerinde mekanik entegrasyon ve termal tasarım alanlarında uzmanlaşmış bir mühendislik firmasıdır. Tasarım aşamasında tespit edilen ve çözülen sorunların, üretim sonrası maliyetli revizyonları önlediğine inanıyoruz. Bu nedenle, erken katılım ve sistematik yaklaşım ile müşterilerimizin ürün geliştirme süreçlerini hızlandırıyor ve maliyetlerini optimize ediyoruz."
+    },
+    "values": {
+      "title": "Değerlerimiz",
+      "items": {
+        "technicalDepth": {
+          "title": "Teknik Derinlik",
+          "description": "CFD, FEA ve CAD araçlarında derin uzmanlık ile teknik sorunları çözüyoruz."
+        },
+        "practicalExperience": {
+          "title": "Pratik Deneyim",
+          "description": "Gerçek üretim süreçleri ve tedarikçi koordinasyonu konusunda pratik deneyime sahibiz."
+        },
+        "systematicApproach": {
+          "title": "Sistematik Yaklaşım",
+          "description": "Her projede standart süreçler ve kalite kontrolleri uyguluyoruz."
+        },
+        "transparentCommunication": {
+          "title": "Şeffaf İletişim",
+          "description": "Proje ilerlemesi ve kararlar hakkında düzenli ve açık iletişim sağlıyoruz."
+        }
+      }
+    },
+    "roles": {
+      "title": "Ekibimiz",
+      "mechanicalEngineer": "Mekanik Tasarım Mühendisi",
+      "thermalEngineer": "Termal Analiz Mühendisi",
+      "projectManager": "Proje Yöneticisi"
+    }
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Projenizi birlikte geliştirelim",
+    "form": {
+      "name": "Ad Soyad",
+      "company": "Şirket",
+      "email": "E-posta",
+      "projectSummary": "Proje Özeti",
+      "timeline": "Zaman Çizelgesi",
+      "budget": "Bütçe (Opsiyonel)",
+      "submit": "Gönder",
+      "sending": "Gönderiliyor...",
+      "success": "Mesajınız gönderildi. En kısa sürede size dönüş yapacağız.",
+      "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+    },
+    "faq": {
+      "title": "Sık Sorulan Sorular",
+      "items": {
+        "q1": {
+          "question": "Proje süresi ne kadar?",
+          "answer": "Proje süresi, projenin kapsamına ve karmaşıklığına bağlıdır. Basit kasa tasarımları 2-4 hafta, termal analiz projeleri 3-6 hafta, kompleks entegrasyon projeleri ise 6-12 hafta sürebilir."
+        },
+        "q2": {
+          "question": "Hangi CAD formatlarını kullanıyorsunuz?",
+          "answer": "SolidWorks, CATIA, Creo ve Fusion 360 gibi yaygın CAD yazılımlarını kullanıyoruz. Teslim formatları STEP, IGES ve native CAD formatlarını içerir."
+        },
+        "q3": {
+          "question": "Prototip üretimi yapıyor musunuz?",
+          "answer": "Evet, 3D yazdırma ve CNC işleme ile prototip üretimi yapıyoruz. Ayrıca tedarikçi ağımız aracılığıyla seri üretim desteği de sağlıyoruz."
+        },
+        "q4": {
+          "question": "Uzaktan çalışma yapabiliyor musunuz?",
+          "answer": "Evet, projelerin büyük bir kısmını uzaktan yürütüyoruz. Gerekli durumlarda yerinde görüşmeler ve testler için seyahat edebiliriz."
+        }
+      }
+    },
+    "whatHappensNext": {
+      "title": "Sonraki Adımlar",
+      "steps": {
+        "step1": {
+          "title": "1. İletişime Geçin",
+          "description": "İletişim formunu doldurun veya e-posta gönderin."
+        },
+        "step2": {
+          "title": "2. Görüşme",
+          "description": "Projenizi detaylı olarak görüşmek için bir toplantı planlayalım."
+        },
+        "step3": {
+          "title": "3. Teklif ve Başlangıç",
+          "description": "Detaylı bir teklif hazırlayıp, projeye başlayalım."
+        }
+      }
+    }
+  },
+  "footer": {
+    "company": "SENTAS Mühendislik",
+    "tagline": "Elektronik Ürünler için Mekanik ve Termal Tasarım Çözümleri",
+    "links": {
+      "services": "Hizmetler",
+      "howWeWork": "Nasıl Çalışırız",
+      "about": "Hakkımızda",
+      "contact": "İletişim"
+    },
+    "rights": "Tüm hakları saklıdır."
+  }
+}
