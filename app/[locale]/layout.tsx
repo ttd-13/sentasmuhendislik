@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server'; // ✅ EKLE
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import Header from '@/components/Header';
@@ -19,6 +20,8 @@ export default async function LocaleLayout({
   if (!locales.includes(locale as any)) {
     notFound();
   }
+
+  setRequestLocale(locale); // ✅ EKLE (getMessages'tan ÖNCE)
 
   const messages = await getMessages();
 
