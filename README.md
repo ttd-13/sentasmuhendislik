@@ -65,3 +65,4 @@ Sitenizi `sentasmuhendislik.com` domain'ine yüklemek için detaylı rehber:
 5. DNS ayarlarını domain sağlayıcınızda yapın
 
 Detaylı adımlar için `DEPLOYMENT.md` dosyasına bakın.
+# sentasmuhendislik
