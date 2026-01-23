@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Section from '@/components/Section';
 import ContactForm from '@/components/ContactForm';
 import { Metadata } from 'next';
@@ -9,12 +9,12 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   return {
-    title: locale === 'tr' 
+    title: locale === 'tr'
       ? 'İletişim - SENTAS Mühendislik'
       : 'Contact - SENTAS Engineering',
     description: locale === 'tr'
       ? 'Projenizi birlikte geliştirelim. Bizimle iletişime geçin.'
-      : "Let's develop your project together. Get in touch with us.",
+      : "Let's develop your project together. Get in touch with us."
   };
 }
 
@@ -23,6 +23,9 @@ export default async function ContactPage({
 }: {
   params: { locale: string };
 }) {
+  // ✅ static render için kritik
+  setRequestLocale(locale);
+
   const t = await getTranslations('contact');
 
   return (
@@ -32,9 +35,7 @@ export default async function ContactPage({
           <h1 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
             {t('title')}
           </h1>
-          <p className="text-xl text-navy-600">
-            {t('subtitle')}
-          </p>
+          <p className="text-xl text-navy-600">{t('subtitle')}</p>
         </div>
       </Section>
 
@@ -78,14 +79,13 @@ export default async function ContactPage({
                     const question = t(`faq.items.${qKey}.question`, { returnNull: true });
                     const answer = t(`faq.items.${qKey}.answer`, { returnNull: true });
                     if (!question || !answer) return null;
+
                     return (
                       <div key={qKey} className="p-4 bg-navy-50 rounded-lg">
                         <h3 className="font-semibold text-navy-900 mb-2">
                           {question}
                         </h3>
-                        <p className="text-sm text-navy-700">
-                          {answer}
-                        </p>
+                        <p className="text-sm text-navy-700">{answer}</p>
                       </div>
                     );
                   })}
