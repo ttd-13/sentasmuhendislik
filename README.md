@@ -66,3 +66,4 @@ Sitenizi `sentasmuhendislik.com` domain'ine yüklemek için detaylı rehber:
 
 Detaylı adımlar için `DEPLOYMENT.md` dosyasına bakın.
 # sentasmuhendislik
+# sentasmuhendislik
