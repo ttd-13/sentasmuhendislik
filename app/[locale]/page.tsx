@@ -1,5 +1,4 @@
-import { useTranslations } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Section from '@/components/Section';
 import CTA from '@/components/CTA';
 import Card from '@/components/Card';
@@ -10,6 +9,9 @@ export default async function HomePage({
 }: {
   params: { locale: string };
 }) {
+  // ✅ next-intl + static render için gerekli
+  setRequestLocale(locale);
+
   const t = await getTranslations('home');
 
   return (
@@ -24,10 +26,10 @@ export default async function HomePage({
             {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTA primary href="/contact">
+            <CTA primary href={`/${locale}/contact`}>
               {t('hero.ctaPrimary')}
             </CTA>
-            <CTA href="/services">
+            <CTA href={`/${locale}/services`}>
               {t('hero.ctaSecondary')}
             </CTA>
           </div>
@@ -195,7 +197,7 @@ export default async function HomePage({
           <p className="text-lg text-navy-600 mb-8">
             {t('finalCta.description')}
           </p>
-          <CTA primary href="/contact">
+          <CTA primary href={`/${locale}/contact`}>
             {t('finalCta.button')}
           </CTA>
         </div>
