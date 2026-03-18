@@ -8,7 +8,7 @@ export default function Footer() {
   const locale = useLocale();
 
   return (
-    <footer className="bg-navy-950 text-navy-100">
+    <footer className="bg-navy-800 text-navy-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -23,7 +23,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href={`/${locale}/services`}
+                  href={locale === 'tr' ? `/${locale}/hizmetler` : `/${locale}/services`}
                   className="text-sm text-navy-300 hover:text-cyan-400 transition-colors"
                 >
                   {t('links.services')}
@@ -31,7 +31,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/how-we-work`}
+                  href={locale === 'tr' ? `/${locale}/nasil-calisiriz` : `/${locale}/how-we-work`}
                   className="text-sm text-navy-300 hover:text-cyan-400 transition-colors"
                 >
                   {t('links.howWeWork')}
@@ -39,7 +39,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/about`}
+                  href={locale === 'tr' ? `/${locale}/hakkimizda` : `/${locale}/about`}
                   className="text-sm text-navy-300 hover:text-cyan-400 transition-colors"
                 >
                   {t('links.about')}
@@ -47,7 +47,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/contact`}
+                  href={locale === 'tr' ? `/${locale}/iletisim` : `/${locale}/contact`}
                   className="text-sm text-navy-300 hover:text-cyan-400 transition-colors"
                 >
                   {t('links.contact')}

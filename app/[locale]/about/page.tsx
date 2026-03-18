@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Section from '@/components/Section';
 import { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 
 export async function generateMetadata({
   params: { locale }
@@ -22,7 +23,7 @@ export default async function AboutPage({
 }: {
   params: { locale: string };
 }) {
-  // ✅ static render için kritik
+  if (locale === 'tr') redirect('/tr/hakkimizda');
   setRequestLocale(locale);
 
   const t = await getTranslations('about');

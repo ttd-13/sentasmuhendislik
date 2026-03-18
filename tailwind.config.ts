@@ -10,23 +10,23 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          50: "#f0f4f8",
-          100: "#d9e2ec",
-          200: "#bcccdc",
-          300: "#9fb3c8",
-          400: "#829ab1",
-          500: "#627d98",
-          600: "#486581",
-          700: "#334e68",
-          800: "#243b53",
-          900: "#102a43",
-          950: "#0a1929",
+          50: "#f1f0ea",  // global background
+          100: "#e3e2da",
+          200: "#d9d9d9", // borders / dividers
+          300: "#c6c6c6",
+          400: "#9ca9b5",
+          500: "#7f8fa0",
+          600: "#4a637f",
+          700: "#314f6f", // primary
+          800: "#2b3a44", // dark surfaces (navbar/footer)
+          900: "#2a292a", // primary text
+          950: "#21252a",
         },
         cyan: {
-          400: "#22d3ee",
-          500: "#06b6d4",
-          600: "#0891b2",
-          700: "#0e7490",
+          400: "#4ec2e6", // accent hover / highlight
+          500: "#0089b6", // primary accent
+          600: "#0089b6",
+          700: "#00739a",
         },
       },
       fontFamily: {

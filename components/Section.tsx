@@ -7,9 +7,9 @@ interface SectionProps {
 
 export default function Section({ children, className = '', background = 'white', id }: SectionProps) {
   const bgClasses = {
-    white: 'bg-white',
-    gray: 'bg-navy-50',
-    pattern: 'bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]'
+    white: 'bg-navy-50',
+    gray: 'bg-white',
+    pattern: 'bg-navy-50 bg-[linear-gradient(to_right,#b8b8b820_1px,transparent_1px),linear-gradient(to_bottom,#b8b8b820_1px,transparent_1px)] bg-[size:24px_24px]'
   };
 
   return (

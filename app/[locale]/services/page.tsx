@@ -1,19 +1,17 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Section from '@/components/Section';
 import { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 
 export async function generateMetadata({
   params: { locale }
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
+  if (locale === 'tr') return {};
   return {
-    title: locale === 'tr'
-      ? 'Hizmetler - SENTAS Mühendislik'
-      : 'Services - SENTAS Engineering',
-    description: locale === 'tr'
-      ? 'Kasa tasarımı, termal analiz, mekanik entegrasyon ve hızlı prototipleme hizmetleri.'
-      : 'Enclosure design, thermal analysis, mechanical integration, and rapid prototyping services.',
+    title: 'Services - SENTAS Engineering',
+    description: 'Enclosure design, thermal analysis, mechanical integration, and rapid prototyping services.',
   };
 }
 
@@ -22,7 +20,7 @@ export default async function ServicesPage({
 }: {
   params: { locale: string };
 }) {
-  // ✅ static render / next-intl için kritik
+  if (locale === 'tr') redirect('/tr/hizmetler');
   setRequestLocale(locale);
 
   const t = await getTranslations('services');

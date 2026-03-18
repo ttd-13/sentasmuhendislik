@@ -8,10 +8,24 @@
   },
   "home": {
     "hero": {
-      "title": "Elektronik Ürünler için Mekanik ve Termal Tasarım Çözümleri",
-      "subtitle": "Ürün geliştirme süreçlerinde mekanik entegrasyon ve ısıl riskleri tasarım aşamasında azaltan mühendislik çözümleri.",
+      "title": "Elektronik Sistemler için Mekanik Çözümler",
+      "subtitle": "Ürün geliştirme süreçlerinde, mekanik entegrasyonu güçlendiren ve ısıl riskleri tasarım aşamasında azaltan mühendislik çözümleri sunuyoruz.",
       "ctaPrimary": "Projenizi Paylaşın",
-      "ctaSecondary": "Hizmetlerimizi İnceleyin"
+      "ctaSecondary": "Çalışma Alanlarımız"
+    },
+    "renders": {
+      "prev": "Önceki",
+      "next": "Sonraki",
+      "loadMore": "Daha Fazla Göster",
+      "collapse": "Daralt",
+      "items": [
+        "Elektronik muhafaza tasarımı",
+        "Elektronik bileşen yerleşimi ve montaj optimizasyonu",
+        "Termal analiz",
+        "Pasif ve aktif soğutma sistemleri tasarımı",
+        "Kablaj mekanik entegrasyonu",
+        "Üretilebilirlik odaklı mekanik tasarım"
+      ]
     },
     "problemSolution": {
       "title": "Tasarım Aşamasında Çözülen Sorunlar",

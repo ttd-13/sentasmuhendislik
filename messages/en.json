@@ -8,10 +8,24 @@
   },
   "home": {
     "hero": {
-      "title": "Mechanical and Thermal Design Solutions for Electronic Products",
-      "subtitle": "Engineering solutions that reduce mechanical integration and thermal risks early in the product development process.",
+      "title": "Mechanical Solutions for Electronic Systems",
+      "subtitle": "We deliver engineering solutions that strengthen mechanical integration and reduce thermal risks at the design stage of product development.",
       "ctaPrimary": "Share Your Project",
-      "ctaSecondary": "Explore Our Services"
+      "ctaSecondary": "Our Areas of Work"
+    },
+    "renders": {
+      "prev": "Previous",
+      "next": "Next",
+      "loadMore": "Show more",
+      "collapse": "Collapse",
+      "items": [
+        "Electronic enclosure design",
+        "Electronic component placement and assembly optimization",
+        "Thermal analysis",
+        "Passive and active cooling systems design",
+        "Cable mechanical integration",
+        "Manufacturability-focused mechanical design"
+      ]
     },
     "problemSolution": {
       "title": "Problems Solved at Design Stage",

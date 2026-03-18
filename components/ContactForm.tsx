@@ -59,7 +59,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-navy-700 mb-2">
+        <label htmlFor="name" className="block text-sm font-medium text-navy-900 mb-2">
           {t('name')}
         </label>
         <input
@@ -69,12 +69,12 @@ export default function ContactForm() {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-navy-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
         />
       </div>
 
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-navy-700 mb-2">
+        <label htmlFor="company" className="block text-sm font-medium text-navy-900 mb-2">
           {t('company')}
         </label>
         <input
@@ -84,12 +84,12 @@ export default function ContactForm() {
           required
           value={formData.company}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-navy-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-navy-700 mb-2">
+        <label htmlFor="email" className="block text-sm font-medium text-navy-900 mb-2">
           {t('email')}
         </label>
         <input
@@ -99,12 +99,12 @@ export default function ContactForm() {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-navy-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
         />
       </div>
 
       <div>
-        <label htmlFor="projectSummary" className="block text-sm font-medium text-navy-700 mb-2">
+        <label htmlFor="projectSummary" className="block text-sm font-medium text-navy-900 mb-2">
           {t('projectSummary')}
         </label>
         <textarea
@@ -114,12 +114,12 @@ export default function ContactForm() {
           rows={4}
           value={formData.projectSummary}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-navy-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
         />
       </div>
 
       <div>
-        <label htmlFor="timeline" className="block text-sm font-medium text-navy-700 mb-2">
+        <label htmlFor="timeline" className="block text-sm font-medium text-navy-900 mb-2">
           {t('timeline')}
         </label>
         <input
@@ -129,12 +129,12 @@ export default function ContactForm() {
           required
           value={formData.timeline}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-navy-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
         />
       </div>
 
       <div>
-        <label htmlFor="budget" className="block text-sm font-medium text-navy-700 mb-2">
+        <label htmlFor="budget" className="block text-sm font-medium text-navy-900 mb-2">
           {t('budget')}
         </label>
         <input
@@ -143,18 +143,18 @@ export default function ContactForm() {
           name="budget"
           value={formData.budget}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-navy-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
         />
       </div>
 
       {status === 'success' && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+        <div className="p-4 bg-green-50 border border-green-200 rounded-md text-green-800">
           {t('success')}
         </div>
       )}
 
       {status === 'error' && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+        <div className="p-4 bg-red-50 border border-red-200 rounded-md text-red-800">
           {t('error')}
         </div>
       )}
@@ -162,7 +162,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full px-6 py-3 bg-cyan-600 text-white font-medium rounded-lg hover:bg-cyan-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full px-6 py-3 bg-cyan-500 text-white font-medium rounded-md hover:bg-cyan-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'sending' ? t('sending') : t('submit')}
       </button>
