@@ -39,11 +39,11 @@ export default function Header() {
   ];
 
   return (
-    <header className={`sticky top-0 z-50 border-b border-navy-800 ${scrolled ? 'bg-navy-800/95 shadow-md' : 'bg-navy-800'}`}>
+    <header className={`sticky top-0 z-50 border-b border-[#e5e5e5] bg-white ${scrolled ? 'shadow-sm' : ''}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href={`/${locale}`} className="flex items-center space-x-2">
-            <img src="/sentas-logo.png" alt="SENTAS Mühendislik Logo" className="h-12 md:h-14 w-auto object-contain" />
+            <img src="/SENTAS-logo.png" alt="SENTAS Mühendislik Logo" className="h-12 md:h-14 w-auto object-contain" />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
@@ -51,7 +51,7 @@ export default function Header() {
               <Link
                 key={item.key}
                 href={item.href}
-                className="text-sm font-medium text-white hover:text-cyan-400 transition-colors"
+                className="text-sm font-medium text-[#2a292a] hover:text-[#0089b6] transition-colors"
               >
                 {t(item.key)}
               </Link>
@@ -63,8 +63,8 @@ export default function Header() {
               onClick={() => switchLocale('tr')}
               className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
                 locale === 'tr'
-                  ? 'bg-white text-navy-800'
-                  : 'text-white hover:bg-navy-700/60'
+                  ? 'bg-[#2a292a] text-white'
+                  : 'text-[#2a292a] hover:bg-[#f5f5f5]'
               }`}
             >
               TR
@@ -73,8 +73,8 @@ export default function Header() {
               onClick={() => switchLocale('en')}
               className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
                 locale === 'en'
-                  ? 'bg-white text-navy-800'
-                  : 'text-white hover:bg-navy-700/60'
+                  ? 'bg-[#2a292a] text-white'
+                  : 'text-[#2a292a] hover:bg-[#f5f5f5]'
               }`}
             >
               EN
@@ -84,13 +84,13 @@ export default function Header() {
       </div>
 
       {/* Mobile menu */}
-      <nav className="md:hidden border-t border-navy-800 bg-navy-800">
+      <nav className="md:hidden border-t border-[#e5e5e5] bg-white">
         <div className="container mx-auto px-4 py-3 space-y-2">
           {navItems.map((item) => (
             <Link
               key={item.key}
               href={item.href}
-              className="block py-2 text-sm font-medium text-white hover:text-cyan-400 transition-colors"
+              className="block py-2 text-sm font-medium text-[#2a292a] hover:text-[#0089b6] transition-colors"
             >
               {t(item.key)}
             </Link>

@@ -14,25 +14,39 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   const t = await getTranslations('home');
+  const whySentasKeys = [
+    'riskReduction',
+    'fewerRedesigns',
+    'manufacturability',
+    'thermalPerformance',
+    'costEfficiency',
+    'timeToMarket'
+  ] as const;
 
   return (
     <>
       {/* Hero */}
-      <Section background="pattern" className="pt-20 pb-12">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 mb-6 text-balance">
-            {t('hero.title')}
-          </h1>
-          <p className="text-xl md:text-2xl text-navy-600 mb-8 text-balance">
-            {t('hero.subtitle')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTA href={locale === 'tr' ? '/hizmetler' : '/services'}>
-              {t('hero.ctaSecondary')}
-            </CTA>
+      <section className="relative overflow-hidden py-20 lg:py-24">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat bg-[position:68%_center] scale-105 opacity-70 [filter:brightness(0.88)_contrast(1.08)_saturate(0.96)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(246,243,238,0.5),rgba(244,240,235,0.42))]" />
+        </div>
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 mb-6 text-balance">
+              {t('hero.title')}
+            </h1>
+            <p className="text-xl md:text-2xl text-navy-600 mb-8 text-balance">
+              {t('hero.subtitle')}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CTA href={locale === 'tr' ? '/hizmetler' : '/services'}>
+                {t('hero.ctaSecondary')}
+              </CTA>
+            </div>
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Services Overview */}
       <Section background="gray">
@@ -91,20 +105,28 @@ export default async function HomePage({
               {t('whySentas.subtitle')}
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {['riskReduction', 'fewerRedesigns', 'manufacturability', 'thermalPerformance', 'costEfficiency', 'timeToMarket'].map((key) => (
-              <div key={key} className="p-6 bg-white border border-navy-200 rounded-md shadow-sm">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 mt-1 mr-3">
-                    <svg className="w-6 h-6 text-cyan-500" fill="currentColor" viewBox="0 0 20 20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8">
+            {whySentasKeys.map((key) => (
+              <article
+                key={key}
+                className="h-full p-7 bg-white border border-[#e7e7e7] rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(15,23,42,0.08)]"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 mt-0.5">
+                    <svg className="w-8 h-8 text-[#0089b6]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <p className="text-navy-900 font-medium">
-                    {t(`whySentas.benefits.${key}`)}
-                  </p>
+                  <div>
+                    <h3 className="text-lg font-semibold text-navy-900 leading-snug mb-2">
+                      {t(`whySentas.cards.${key}.title`)}
+                    </h3>
+                    <p className="text-sm text-navy-600 leading-relaxed">
+                      {t(`whySentas.cards.${key}.description`)}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

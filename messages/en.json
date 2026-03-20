@@ -70,6 +70,32 @@
     "whySentas": {
       "title": "Why SENTAS Engineering?",
       "subtitle": "Technical depth and practical experience combined",
+      "cards": {
+        "riskReduction": {
+          "title": "De-risk Design Decisions Early",
+          "description": "We identify critical integration and thermal risks before prototype investment, reducing downstream technical uncertainty."
+        },
+        "fewerRedesigns": {
+          "title": "Cut Revision Loops",
+          "description": "Systematic validation in the design phase minimizes late-stage rework and keeps engineering cycles predictable."
+        },
+        "manufacturability": {
+          "title": "Engineer for Manufacturing Reality",
+          "description": "DFM-led decisions align geometry, tolerances, and assembly logic with real production constraints from day one."
+        },
+        "thermalPerformance": {
+          "title": "Build Thermal Confidence",
+          "description": "Simulation-driven thermal architecture improves reliability margins and avoids performance bottlenecks under load."
+        },
+        "costEfficiency": {
+          "title": "Lower Total Program Cost",
+          "description": "By resolving issues upstream, we reduce tooling changes, iteration waste, and hidden costs during industrialization."
+        },
+        "timeToMarket": {
+          "title": "Accelerate Time to Market",
+          "description": "A disciplined engineering workflow enables faster decision-making and a smoother path from concept to release."
+        }
+      },
       "benefits": {
         "riskReduction": "Risk reduction at design stage",
         "fewerRedesigns": "Fewer revision cycles",

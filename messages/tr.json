@@ -70,6 +70,32 @@
     "whySentas": {
       "title": "Neden SENTAS Mühendislik?",
       "subtitle": "Teknik derinlik ve pratik deneyim bir arada",
+      "cards": {
+        "riskReduction": {
+          "title": "Tasarım Kararlarında Erken Risk Kontrolü",
+          "description": "Kritik mekanik entegrasyon ve termal riskleri prototip yatırımından önce belirleyerek teknik belirsizliği azaltıyoruz."
+        },
+        "fewerRedesigns": {
+          "title": "Revizyon Döngülerini Azaltın",
+          "description": "Tasarım aşamasındaki sistematik doğrulama yaklaşımı, geç aşama yeniden çalışma ihtiyacını minimuma indirir."
+        },
+        "manufacturability": {
+          "title": "Üretim Gerçekliğine Uyumlu Mühendislik",
+          "description": "DFM odaklı kararlarla geometri, tolerans ve montaj kurgusunu ilk günden üretim kısıtlarıyla hizalıyoruz."
+        },
+        "thermalPerformance": {
+          "title": "Termal Güvenlik Marjını Güçlendirin",
+          "description": "Simülasyon temelli termal mimari ile güvenilirlik marjlarını artırıyor, yük altında performans darboğazlarını önlüyoruz."
+        },
+        "costEfficiency": {
+          "title": "Toplam Proje Maliyetini Düşürün",
+          "description": "Sorunları erken aşamada çözerek kalıp revizyonu, iterasyon kaybı ve üretime geçişteki gizli maliyetleri azaltıyoruz."
+        },
+        "timeToMarket": {
+          "title": "Pazara Çıkış Süresini Hızlandırın",
+          "description": "Disiplinli mühendislik akışı sayesinde karar alma sürecini hızlandırıp konseptten yayına geçişi sadeleştiriyoruz."
+        }
+      },
       "benefits": {
         "riskReduction": "Tasarım aşamasında risk azaltma",
         "fewerRedesigns": "Daha az revizyon döngüsü",
