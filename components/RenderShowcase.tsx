@@ -15,18 +15,18 @@ interface RenderShowcaseProps {
 
 function RenderCard({ item }: { item: RenderItem }) {
   return (
-    <div className="flex flex-col h-[360px] rounded-md overflow-hidden border border-navy-200 bg-white shadow-sm">
-      <div className="flex-1 min-h-0 relative">
+    <div className="flex flex-col h-[360px] rounded-md overflow-hidden border border-[#e3e9ee] bg-white shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
+      <div className="relative h-[304px]">
         {item.image ? (
-          <Image src={item.image} alt="" fill className="object-contain" quality={100} />
+          <Image src={item.image} alt="" fill className="object-cover object-[center_40%]" quality={100} />
         ) : (
           <div className="w-full h-full bg-navy-50 flex items-center justify-center text-navy-400 text-sm">
             Görsel
           </div>
         )}
       </div>
-      <div className="min-h-[56px] flex items-center justify-center px-4 text-center shrink-0 border-t border-navy-200">
-        <p className="text-sm text-navy-900">{item.caption}</p>
+      <div className="min-h-[56px] flex items-center justify-center px-4 text-center shrink-0 border-t border-[#e8edf2]">
+        <p className="text-sm text-navy-700">{item.caption}</p>
       </div>
     </div>
   );
@@ -61,7 +61,7 @@ export default function RenderShowcase({ items }: RenderShowcaseProps) {
             ))}
           </div>
           <div
-            className="absolute inset-x-0 bottom-0 h-12 pointer-events-none bg-gradient-to-t from-navy-50 to-transparent"
+            className="absolute inset-x-0 bottom-0 h-12 pointer-events-none bg-gradient-to-t from-white to-transparent"
             aria-hidden
           />
         </div>

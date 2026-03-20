@@ -1,9 +1,9 @@
 import createMiddleware from 'next-intl/middleware';
-import { locales } from './i18n';
+import { defaultLocale, locales } from './lib/routing';
 
 export default createMiddleware({
   locales,
-  defaultLocale: 'tr',
+  defaultLocale,
   localePrefix: 'always'
 });
 

@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { getLocalizedPath, getRouteKeyFromPath, type Locale, routeKeys } from '@/lib/localizedRoutes';
 
 export default function Header() {
   const t = useTranslations('nav');
@@ -25,18 +26,23 @@ export default function Header() {
 
   const switchLocale = (newLocale: string) => {
     if (!mounted) return;
-    const currentPath = pathname.replace(`/${locale}`, '');
-    const newPath = `/${newLocale}${currentPath || ''}`;
-    window.location.href = newPath;
+    const targetLocale = newLocale as Locale;
+    const currentSlug = pathname.replace(/^\/(tr|en)\/?/, '');
+    const routeKey = getRouteKeyFromPath(locale as Locale, currentSlug);
+
+    const localizedPath = routeKey
+      ? getLocalizedPath(routeKey, targetLocale)
+      : `/${targetLocale}${currentSlug ? `/${currentSlug}` : ''}`;
+
+    const query = window.location.search || '';
+    const hash = window.location.hash || '';
+    window.location.href = `${localizedPath}${query}${hash}`;
   };
 
-  const navItems = [
-    { key: 'home', href: `/${locale}` },
-    { key: 'services', href: locale === 'tr' ? `/${locale}/hizmetler` : `/${locale}/services` },
-    { key: 'howWeWork', href: locale === 'tr' ? `/${locale}/nasil-calisiriz` : `/${locale}/how-we-work` },
-    { key: 'about', href: locale === 'tr' ? `/${locale}/hakkimizda` : `/${locale}/about` },
-    { key: 'contact', href: locale === 'tr' ? `/${locale}/iletisim` : `/${locale}/contact` },
-  ];
+  const navItems = routeKeys.map((key) => ({
+    key,
+    href: getLocalizedPath(key, locale as Locale)
+  }));
 
   return (
     <header className={`sticky top-0 z-50 border-b border-[#e5e5e5] bg-white ${scrolled ? 'shadow-sm' : ''}`}>

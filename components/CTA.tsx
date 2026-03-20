@@ -14,7 +14,7 @@ export default function CTA({ primary = false, href, children }: CTAProps) {
   const fullHref = href.startsWith('/') ? `/${locale}${href}` : href;
 
   const baseClasses = "inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md transition-colors";
-  const primaryClasses = "bg-cyan-500 text-white hover:bg-cyan-400";
+  const primaryClasses = "bg-[#0089b6] text-white hover:bg-[#006f91]";
   const secondaryClasses = "bg-white text-navy-900 border border-navy-200 hover:border-cyan-400 hover:text-cyan-400";
 
   return (

@@ -127,17 +127,6 @@
         }
       }
     },
-    "deliverables": {
-      "title": "Deliverables",
-      "items": [
-        "3D CAD models (in STEP, IGES formats)",
-        "Production drawings and tolerance analyses",
-        "Thermal analysis reports and recommendations",
-        "Material selection guides",
-        "Prototype test results",
-        "Production readiness documentation"
-      ]
-    },
     "finalCta": {
       "title": "Let's Develop Your Project Together",
       "description": "If you need mechanical and thermal design support in your electronic product development process, contact us.",
@@ -161,13 +150,6 @@
       ],
       "approach": "Our Approach",
       "approachText": "Following DFM (Design for Manufacturing) principles, we develop designs suitable for manufacturing methods such as injection molding, CNC machining, and sheet metal processing. In material selection, we balance durability, cost, and manufacturing ease.",
-      "deliverables": "Deliverables",
-      "deliverablesList": [
-        "3D CAD models",
-        "Production drawings and tolerance analyses",
-        "Material recommendations and supplier information",
-        "Assembly guides"
-      ],
       "whenToInvolve": "When to Contact Us",
       "whenToInvolveText": "Reach out when your product concept is clear and industrial design work has begun. Early involvement minimizes design revisions."
     },
@@ -185,13 +167,6 @@
       ],
       "approach": "Our Approach",
       "approachText": "By performing thermal analysis through CFD simulations at the design stage, we predict temperature distributions of critical components. We determine cooling requirements and select the most suitable cooling strategy. We validate simulation results with prototype tests.",
-      "deliverables": "Deliverables",
-      "deliverablesList": [
-        "Thermal analysis reports",
-        "Temperature distribution maps",
-        "Cooling system design recommendations",
-        "Fan and heatsink selection guides"
-      ],
       "whenToInvolve": "When to Contact Us",
       "whenToInvolveText": "Start thermal analysis work when PCB placement and power consumption estimates are clear. Early analysis prevents thermal issues from being resolved with costly solutions."
     },
@@ -209,13 +184,6 @@
       ],
       "approach": "Our Approach",
       "approachText": "By evaluating PCB placement data and mechanical constraints together, we create 3D integration models. We design special channels and connection points for cable routing. We consider assembly sequence and access requirements.",
-      "deliverables": "Deliverables",
-      "deliverablesList": [
-        "3D integration models",
-        "Cable routing drawings",
-        "Assembly guides",
-        "EMC compliance recommendations"
-      ],
       "whenToInvolve": "When to Contact Us",
       "whenToInvolveText": "Start integration work while PCB design and mechanical enclosure design progress in parallel. Early coordination reduces revision costs."
     },
@@ -233,13 +201,6 @@
       ],
       "approach": "Our Approach",
       "approachText": "We accelerate design iterations by using rapid prototyping methods. We perform functional and mechanical validation through prototype tests. We facilitate transition to production by preparing necessary documentation for mass production.",
-      "deliverables": "Deliverables",
-      "deliverablesList": [
-        "Prototype parts",
-        "Test reports",
-        "Production readiness documentation",
-        "Supplier recommendations"
-      ],
       "whenToInvolve": "When to Contact Us",
       "whenToInvolveText": "Start prototype production at the design validation stage. Early prototyping enables early detection of design errors."
     }

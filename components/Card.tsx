@@ -7,7 +7,7 @@ interface CardProps {
 
 export default function Card({ title, description, icon, href }: CardProps) {
   const content = (
-    <div className="relative h-full p-6 bg-white rounded-md border border-navy-200 shadow-sm cursor-pointer transform-gpu transition-all duration-200 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_10px_22px_rgba(0,0,0,0.08)] group-hover:border-[#0089b6]">
+    <div className="relative h-full p-6 bg-white rounded-md border border-navy-200 shadow-sm cursor-pointer transform-gpu transition-all duration-300 ease-out group-hover:-translate-y-1.5 group-hover:shadow-[0_14px_28px_rgba(0,0,0,0.1)] group-hover:border-[#0089b6]">
       <span className="absolute top-4 right-4 text-[#8ca0a8] opacity-0 scale-95 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:text-[#0089b6] transition-all duration-200 ease-out">
         <svg
           className="w-4 h-4"

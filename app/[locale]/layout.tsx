@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server'; // ✅ EKLE
 import { notFound } from 'next/navigation';
-import { locales } from '@/i18n';
+import { locales } from '@/lib/routing';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 

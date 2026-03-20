@@ -101,34 +101,6 @@ export default async function HizmetlerPage({
                 </p>
               </div>
 
-              <div>
-                <h3 className="text-xl font-semibold text-navy-900 mb-3">
-                  {t(`${service.key}.deliverables`)}
-                </h3>
-                <ul className="space-y-2">
-                  {[0, 1, 2, 3].map((index) => {
-                    const deliverable = t(`${service.key}.deliverablesList.${index}`, { returnNull: true });
-                    if (!deliverable) return null;
-                    return (
-                      <li key={index} className="flex items-start">
-                        <svg
-                          className="w-5 h-5 text-cyan-600 mr-3 mt-0.5 flex-shrink-0"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        <span className="text-navy-700">{deliverable}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-
               <div className="p-6 bg-cyan-50 rounded-lg border border-cyan-200">
                 <h3 className="text-lg font-semibold text-navy-900 mb-2">
                   {t(`${service.key}.whenToInvolve`)}

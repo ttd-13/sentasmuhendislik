@@ -127,17 +127,6 @@
         }
       }
     },
-    "deliverables": {
-      "title": "Teslim Edilenler",
-      "items": [
-        "3D CAD modelleri (STEP, IGES formatlarında)",
-        "Üretim çizimleri ve tolerans analizleri",
-        "Termal analiz raporları ve öneriler",
-        "Malzeme seçim kılavuzları",
-        "Prototip test sonuçları",
-        "Üretim hazırlık dokümantasyonu"
-      ]
-    },
     "finalCta": {
       "title": "Projenizi Birlikte Geliştirelim",
       "description": "Elektronik ürün geliştirme sürecinizde mekanik ve termal tasarım desteğine ihtiyacınız varsa, bizimle iletişime geçin.",
@@ -161,13 +150,6 @@
       ],
       "approach": "Yaklaşımımız",
       "approachText": "DFM (Design for Manufacturing) prensiplerine uygun olarak, enjeksiyon kalıplama, CNC işleme ve sac metal işleme gibi üretim yöntemlerine uygun tasarımlar geliştiriyoruz. Malzeme seçiminde dayanıklılık, maliyet ve üretim kolaylığını dengeliyoruz.",
-      "deliverables": "Teslim Edilenler",
-      "deliverablesList": [
-        "3D CAD modelleri",
-        "Üretim çizimleri ve tolerans analizleri",
-        "Malzeme önerileri ve tedarikçi bilgileri",
-        "Montaj kılavuzları"
-      ],
       "whenToInvolve": "Ne Zaman Bize Başvurmalısınız",
       "whenToInvolveText": "Ürün konseptiniz netleştiğinde ve endüstriyel tasarım çalışmaları başladığında bize ulaşın. Erken katılım, tasarım revizyonlarını minimize eder."
     },
@@ -185,13 +167,6 @@
       ],
       "approach": "Yaklaşımımız",
       "approachText": "Tasarım aşamasında CFD simülasyonları ile termal analiz yaparak, kritik bileşenlerin sıcaklık dağılımlarını öngörüyoruz. Soğutma gereksinimlerini belirleyip, en uygun soğutma stratejisini seçiyoruz. Prototip testleri ile simülasyon sonuçlarını doğruluyoruz.",
-      "deliverables": "Teslim Edilenler",
-      "deliverablesList": [
-        "Termal analiz raporları",
-        "Sıcaklık dağılım haritaları",
-        "Soğutma sistem tasarım önerileri",
-        "Fan ve heatsink seçim kılavuzları"
-      ],
       "whenToInvolve": "Ne Zaman Bize Başvurmalısınız",
       "whenToInvolveText": "PCB yerleşimi ve güç tüketimi tahminleri netleştiğinde termal analiz çalışmalarına başlayın. Erken analiz, termal sorunların maliyetli çözümlerle giderilmesini önler."
     },
@@ -209,13 +184,6 @@
       ],
       "approach": "Yaklaşımımız",
       "approachText": "PCB yerleşim verilerini ve mekanik kısıtları birlikte değerlendirerek, 3D entegrasyon modelleri oluşturuyoruz. Kablo yönlendirme için özel kanallar ve bağlantı noktaları tasarlıyoruz. Montaj sırası ve erişim gereksinimlerini göz önünde bulunduruyoruz.",
-      "deliverables": "Teslim Edilenler",
-      "deliverablesList": [
-        "3D entegrasyon modelleri",
-        "Kablo yönlendirme çizimleri",
-        "Montaj kılavuzları",
-        "EMC uyumluluk önerileri"
-      ],
       "whenToInvolve": "Ne Zaman Bize Başvurmalısınız",
       "whenToInvolveText": "PCB tasarımı ve mekanik kasa tasarımı paralel ilerlerken entegrasyon çalışmalarına başlayın. Erken koordinasyon, revizyon maliyetlerini düşürür."
     },
@@ -233,13 +201,6 @@
       ],
       "approach": "Yaklaşımımız",
       "approachText": "Hızlı prototipleme yöntemlerini kullanarak, tasarım iterasyonlarını hızlandırıyoruz. Prototip testleri ile fonksiyonel ve mekanik doğrulama yapıyoruz. Seri üretim için gerekli dokümantasyonu hazırlayarak, üretim sürecine geçişi kolaylaştırıyoruz.",
-      "deliverables": "Teslim Edilenler",
-      "deliverablesList": [
-        "Prototip parçalar",
-        "Test raporları",
-        "Üretim hazırlık dokümantasyonu",
-        "Tedarikçi önerileri"
-      ],
       "whenToInvolve": "Ne Zaman Bize Başvurmalısınız",
       "whenToInvolveText": "Tasarım doğrulama aşamasında prototip üretimine başlayın. Erken prototipleme, tasarım hatalarının erken tespitini sağlar."
     }
