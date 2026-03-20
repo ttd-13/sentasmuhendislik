@@ -85,7 +85,7 @@ export default async function HomePage({
       </Section>
 
       {/* Render Showcase */}
-      <Section>
+      <Section className="bg-[#f8f9fb]">
         <RenderShowcase
           items={[0, 1, 2, 3, 4, 5].map((i) => ({
             image: i === 0 ? '/renders/elektronik-muhafaza-tasarimi.png' : null,
@@ -105,15 +105,15 @@ export default async function HomePage({
               {t('whySentas.subtitle')}
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whySentasKeys.map((key) => (
               <article
                 key={key}
-                className="h-full p-7 bg-white border border-[#e7e7e7] rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(15,23,42,0.08)]"
+                className="h-full p-7 bg-white border border-[#e7e7e7] rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 mt-0.5">
-                    <svg className="w-8 h-8 text-[#0089b6]" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex-shrink-0 w-10 h-10 mt-0.5 rounded-full bg-[rgba(0,137,182,0.1)] p-2 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-[#0089b6]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>

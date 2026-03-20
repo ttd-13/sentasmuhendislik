@@ -50,20 +50,20 @@
       "subtitle": "Elektronik ürün geliştirme sürecinin her aşamasında destek",
       "items": {
         "enclosure": {
-          "title": "Kasa Tasarımı",
-          "description": "Endüstriyel tasarım gereksinimlerini karşılayan, üretilebilir ve dayanıklı kasa çözümleri."
+          "title": "Elektronik Sistemler için Kasa Tasarımı",
+          "description": "Ürün gereksinimlerine uygun, dayanıklı ve üretilebilir mekanik muhafaza tasarımları geliştiririz."
         },
         "thermal": {
-          "title": "Termal Analiz ve Soğutma",
-          "description": "CFD simülasyonları ile ısıl performans optimizasyonu ve soğutma sistemleri tasarımı."
+          "title": "Termal Analiz ve Soğutma Tasarımı",
+          "description": "CFD ve mühendislik hesaplamaları ile ısı yönetimini optimize ederek sistem performansını güvence altına alırız."
         },
         "integration": {
-          "title": "Mekanik Entegrasyon",
-          "description": "PCB, kablolama ve mekanik bileşenlerin 3D entegrasyonu ve kablo yönlendirme."
+          "title": "Mekanik\u00A0Entegrasyon ve Yerleşim",
+          "description": "PCB, kablolama ve mekanik bileşenlerin sistem içinde uyumlu ve sürdürülebilir şekilde entegrasyonunu sağlarız."
         },
         "prototyping": {
-          "title": "Hızlı Prototipleme",
-          "description": "3D yazdırma ve CNC ile hızlı prototip üretimi ve üretim desteği."
+          "title": "Tasarım Doğrulama ve Üretime Hazırlık",
+          "description": "Tasarımın üretim öncesi doğrulanması için montaj, erişim ve uygulanabilirlik kontrollerini gerçekleştiririz."
         }
       }
     },
