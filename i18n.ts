@@ -1,13 +1,8 @@
-import { notFound } from 'next/navigation';
-import { getRequestConfig } from 'next-intl/server';
-import { locales, type Locale } from '@/lib/routing';
-
-export default getRequestConfig(async ({ requestLocale }) => {
-  const locale = await requestLocale;
-  if (!locales.includes(locale as Locale)) notFound();
-
-  return {
-    locale,
-    messages: (await import(`./messages/${locale}.json`)).default
-  };
-});
+/**
+ * next-intl Next.js eklentisi için kök giriş dosyası (createNextIntlPlugin).
+ * Asıl getRequestConfig ve mesaj yükleme: ./i18n/request.ts
+ *
+ * Kökte bu dosyanın bulunması; eski önbellek / araçların hâlâ i18n.ts yolunu
+ * araması durumunda "dosya bulunamadı" hatalarını önler.
+ */
+export { default } from './i18n/request';

@@ -1,0 +1,23 @@
+---
+description: Stabil i18n/middleware dosyalarına gereksiz dokunulmaması; tasarım işlerinde altyapıyı koru
+alwaysApply: true
+---
+
+# i18n ve middleware — dokunma politikası
+
+Bu yapı **şu an çalışır durumda**. Yeni görevlerde aşağıdaki dosyalara **gereksiz yere dokunma**; yalnızca gerçekten zorunlu bir hata düzeltmesi veya kullanıcı tarafından açıkça istenen altyapı değişikliği varsa düzenle.
+
+**Korumalı dosyalar:**
+
+- `i18n.ts`
+- `i18n/request.ts`
+- `next.config.js`
+- `middleware.ts`
+- `lib/routing.ts`
+
+**Özellikle şu tür işlerde bu dosyaları değiştirme:**
+
+- Tasarım, layout, navbar, dropdown, section, içerik bileşenleri
+- Yalnızca çeviri metni (`messages/*.json`) veya yalnızca UI bileşenleri yeterliyse orada kal
+
+Locale slug eşlemeleri ve link üretimi için `lib/localizedRoutes.ts` ve ilgili bileşenler yeterli olmalı; middleware veya `next.config.js`’e başvurma.

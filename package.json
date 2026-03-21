@@ -5,15 +5,18 @@
   "scripts": {
     "dev": "next dev",
     "dev:clean": "rimraf .next && next dev",
+    "clean": "rimraf .next",
     "build": "next build",
+    "build:clean": "rimraf .next && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "reinstall": "rimraf node_modules .next && npm install"
   },
   "dependencies": {
-    "next": "^14.2.0",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
-    "next-intl": "^3.26.5"
+    "next": "14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "next-intl": "3.26.5"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",

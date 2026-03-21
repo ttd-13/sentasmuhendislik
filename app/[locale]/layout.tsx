@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server'; // ✅ EKLE
 import { notFound } from 'next/navigation';
-import { locales } from '@/lib/routing';
+import { locales, type Locale } from '@/lib/routing';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -17,7 +17,7 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  if (!locales.includes(locale as any)) {
+  if (!locales.includes(locale as Locale)) {
     notFound();
   }
 

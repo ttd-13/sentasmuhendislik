@@ -1,12 +1,14 @@
 import createMiddleware from 'next-intl/middleware';
-import { defaultLocale, locales } from './lib/routing';
+import { routing } from './lib/routing';
 
-export default createMiddleware({
-  locales,
-  defaultLocale,
-  localePrefix: 'always'
-});
+/**
+ * next-intl: routing nesnesi createMiddleware’in beklediği tek doğru biçim (3.22+).
+ * Matcher: kök yönlendirme + locale önekli rotalar + statik dosya/api hariç.
+ */
+const intlMiddleware = createMiddleware(routing);
+
+export default intlMiddleware;
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
+  matcher: ['/', '/(tr|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)'],
 };

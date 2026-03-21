@@ -1,6 +1,7 @@
+import type { Locale } from '@/lib/routing';
+
 export const routeKeys = ['home', 'about', 'services', 'howWeWork', 'contact'] as const;
 export type RouteKey = (typeof routeKeys)[number];
-import type { Locale } from '@/lib/routing';
 
 const localizedSlugs: Record<RouteKey, Record<Locale, string>> = {
   home: { tr: '', en: '' },
