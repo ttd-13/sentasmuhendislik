@@ -3,8 +3,6 @@ import Section from '@/components/Section';
 import CTA from '@/components/CTA';
 import Card from '@/components/Card';
 import RenderShowcase from '@/components/RenderShowcase';
-import Link from 'next/link';
-
 export default async function HomePage({
   params: { locale }
 }: {
@@ -131,45 +129,6 @@ export default async function HomePage({
                 </div>
               </article>
             ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* How We Work Summary */}
-      <Section className="bg-[#0f172a]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {t('howWeWork.title')}
-            </h2>
-            <p className="text-lg text-[rgba(255,255,255,0.78)] max-w-2xl mx-auto">
-              {t('howWeWork.subtitle')}
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {['discovery', 'design', 'validation', 'delivery'].map((key) => (
-              <div key={key} className="text-center p-6 bg-white border border-navy-200 rounded-md shadow-sm">
-                <div className="w-16 h-16 mx-auto mb-4 bg-cyan-500 text-white rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-bold">
-                    {key === 'discovery' ? '1' : key === 'design' ? '2' : key === 'validation' ? '3' : '4'}
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold text-navy-900 mb-2">
-                  {t(`howWeWork.steps.${key}.title`)}
-                </h3>
-                <p className="text-navy-700 text-sm">
-                  {t(`howWeWork.steps.${key}.description`)}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link
-              href={locale === 'tr' ? `/${locale}/nasil-calisiriz` : `/${locale}/how-we-work`}
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md bg-white text-navy-900 border border-navy-200 hover:border-cyan-400 hover:text-cyan-400 transition-colors"
-            >
-              {locale === 'tr' ? 'Detaylı Süreç' : 'Detailed Process'}
-            </Link>
           </div>
         </div>
       </Section>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
@@ -32,60 +32,93 @@ function RenderCard({ item }: { item: RenderItem }) {
   );
 }
 
+const GAP_PX = 16;
+
+/**
+ * lg: ~max-w-6xl iç alanında 3 tam kart + 4. için hafif peek (≈100px)
+ * md: 2 kart + peek; mobil: tek sütun genişliği
+ */
+const cardWidthClass =
+  'shrink-0 w-[min(268px,calc(100vw-2.75rem))] sm:w-[284px] md:w-[296px] lg:w-[318px]';
+
 export default function RenderShowcase({ items }: RenderShowcaseProps) {
-  const [visibleCount, setVisibleCount] = useState(3);
+  const scrollerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('home.renders');
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(false);
 
-  const displayed = items.slice(0, visibleCount);
-  const hasMore = visibleCount < items.length;
-  const canCollapse = visibleCount > 3;
-  const showPreviewRow = visibleCount === 3 && items.length >= 6;
-  const previewItems = showPreviewRow ? items.slice(3, 6) : [];
+  const updateArrows = useCallback(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const { scrollLeft, scrollWidth, clientWidth } = el;
+    const maxScroll = scrollWidth - clientWidth;
+    setCanPrev(scrollLeft > 4);
+    setCanNext(scrollLeft < maxScroll - 4);
+  }, []);
 
-  const loadMore = () => setVisibleCount((n) => Math.min(n + 3, items.length));
-  const collapse = () => setVisibleCount(3);
+  useEffect(() => {
+    updateArrows();
+    const el = scrollerRef.current;
+    if (!el) return;
+    el.addEventListener('scroll', updateArrows, { passive: true });
+    const ro = new ResizeObserver(updateArrows);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener('scroll', updateArrows);
+      ro.disconnect();
+    };
+  }, [updateArrows, items.length]);
+
+  const scrollStep = (dir: -1 | 1) => {
+    const el = scrollerRef.current;
+    const card = el?.querySelector('[data-ccard]') as HTMLElement | null;
+    const step = card ? card.offsetWidth + GAP_PX : 320;
+    el?.scrollBy({ left: dir * step, behavior: 'smooth' });
+  };
+
+  if (items.length === 0) {
+    return null;
+  }
+
+  const arrowClass =
+    'absolute top-[calc(50%-1.125rem)] z-10 hidden h-9 w-9 items-center justify-center rounded-full border border-navy-200/90 bg-white text-navy-800 shadow-[0_1px_3px_rgba(42,41,42,0.08)] transition-colors hover:border-navy-300 hover:bg-[#fafbfc] md:flex';
 
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {displayed.map((item, i) => (
-          <RenderCard key={i} item={item} />
-        ))}
-      </div>
+    <div className="relative max-w-6xl mx-auto md:px-11">
+      <button
+        type="button"
+        aria-label={t('prev')}
+        onClick={() => scrollStep(-1)}
+        disabled={!canPrev}
+        className={`${arrowClass} left-0 disabled:pointer-events-none disabled:opacity-30`}
+      >
+        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        aria-label={t('next')}
+        onClick={() => scrollStep(1)}
+        disabled={!canNext}
+        className={`${arrowClass} right-0 disabled:pointer-events-none disabled:opacity-30`}
+      >
+        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
 
-      {showPreviewRow && previewItems.length > 0 && (
-        <div className="relative overflow-hidden max-h-[72px] mt-6" aria-hidden>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 opacity-40 pointer-events-none">
-            {previewItems.map((item, i) => (
-              <RenderCard key={`preview-${i}`} item={item} />
-            ))}
-          </div>
-          <div
-            className="absolute inset-x-0 bottom-0 h-12 pointer-events-none bg-gradient-to-t from-white to-transparent"
-            aria-hidden
-          />
+      <div
+        ref={scrollerRef}
+        className="w-full overflow-x-auto overflow-y-hidden scroll-smooth pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden touch-pan-x"
+      >
+        <div className="flex w-max gap-4 pr-1">
+          {items.map((item, i) => (
+            <div key={i} data-ccard className={cardWidthClass}>
+              <RenderCard item={item} />
+            </div>
+          ))}
         </div>
-      )}
-
-      <div className="mt-8 flex flex-wrap justify-center gap-4">
-        {hasMore && (
-          <button
-            type="button"
-            onClick={loadMore}
-            className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md bg-cyan-500 text-white hover:bg-cyan-400 transition-colors"
-          >
-            {t('loadMore')}
-          </button>
-        )}
-        {canCollapse && (
-          <button
-            type="button"
-            onClick={collapse}
-            className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md bg-white text-navy-900 border border-navy-200 hover:border-cyan-400 hover:text-cyan-400 transition-colors"
-          >
-            {t('collapse')}
-          </button>
-        )}
       </div>
     </div>
   );

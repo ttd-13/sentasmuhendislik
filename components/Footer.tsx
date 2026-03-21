@@ -31,14 +31,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href={locale === 'tr' ? `/${locale}/nasil-calisiriz` : `/${locale}/how-we-work`}
-                  className="text-sm text-navy-300 hover:text-cyan-400 transition-colors"
-                >
-                  {t('links.howWeWork')}
-                </Link>
-              </li>
-              <li>
-                <Link
                   href={locale === 'tr' ? `/${locale}/hakkimizda` : `/${locale}/about`}
                   className="text-sm text-navy-300 hover:text-cyan-400 transition-colors"
                 >
