@@ -379,7 +379,7 @@ export default function Header() {
                       }`}
                     >
                       <div
-                        className="h-3 w-3 rotate-45 rounded-[3px] border border-[#e5e5e5]/90 bg-gradient-to-br from-white/95 via-[#fafcfd]/95 to-[#eef2f5]/95 shadow-[0_2px_10px_rgba(42,41,42,0.1),0_0_0_1px_rgba(255,255,255,0.65)_inset] drop-shadow-[0_1px_2px_rgba(42,41,42,0.06)] backdrop-blur-[2px]"
+                        className="h-3 w-3 rotate-45 rounded-[3px] border border-[#ffffff] bg-gradient-to-br from-white/95 via-[#fafcfd]/95 to-[#eef2f5]/95 shadow-[0_2px_10px_rgba(42,41,42,0.1),0_0_0_1px_rgba(255,255,255,0.65)_inset] drop-shadow-[0_1px_2px_rgba(42,41,42,0.06)] backdrop-blur-[2px]"
                       />
                     </div>
                   ) : null}
@@ -400,7 +400,7 @@ export default function Header() {
                           Köprü yok: panel üst kenarı navbar alt çizgisiyle hizalı.
                         */}
                         <div
-                          className={`flex w-[min(100vw-2rem,42rem)] items-stretch gap-4 rounded-lg border border-[#e5e5e5] bg-white px-6 pb-6 pt-7 shadow-[0_12px_48px_-12px_rgba(42,41,42,0.2)] transition-[transform,opacity] duration-200 ease-out motion-reduce:transition-none ${
+                          className={`flex w-[min(100vw-2rem,42rem)] items-stretch gap-4 rounded-lg border border-[#ffffff] bg-white px-6 pb-6 pt-7 shadow-[0_12px_48px_-12px_rgba(42,41,42,0.2)] transition-[transform,opacity] duration-200 ease-out motion-reduce:transition-none ${
                             megaPanelEnterReady
                               ? 'translate-y-0 opacity-100'
                               : '-translate-y-2 opacity-0 motion-reduce:translate-y-0 motion-reduce:opacity-100'
@@ -429,7 +429,7 @@ export default function Header() {
                             className="hidden w-[min(19.5rem,46%)] max-w-[21rem] shrink-0 sm:flex sm:items-start"
                             aria-hidden="true"
                           >
-                            <div className="relative aspect-[4/3] w-full min-h-0 overflow-hidden rounded-md border border-[#e0e4e8] bg-[#ffffff]">
+                            <div className="relative aspect-[4/3] w-full min-h-0 overflow-hidden rounded-md border border-[#ffffff] bg-[#ffffff]">
                               {megaPreviewPair.outgoing ? (
                                 <MegaPreviewSlide
                                   key={`mega-out-${megaPreviewPair.outgoing}`}
