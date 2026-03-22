@@ -86,10 +86,17 @@ export default async function HomePage({
               </h3>
             </div>
             <RenderShowcase
-              items={[0, 1, 2, 3, 4, 5].map((i) => ({
-                image: i === 0 ? '/renders/elektronik-muhafaza-tasarimi.png' : null,
-                caption: t(`renders.items.${i}`)
-              }))}
+              items={[
+                {
+                  image: '/renders/elektronik-muhafaza-tasarimi.png',
+                  caption: t('renders.items.0'),
+                },
+                { image: '/renders/bilesen-yerlesimi.png', caption: t('renders.items.1') },
+                { image: '/renders/termal.jpg', caption: t('renders.items.2') },
+                { image: '/renders/aktif-sogutma.png', caption: t('renders.items.3') },
+                { image: '/renders/kablaj.jpg', caption: t('renders.items.4') },
+                { image: '/renders/dfm.jpg', caption: t('renders.items.5') },
+              ]}
             />
           </div>
         </div>

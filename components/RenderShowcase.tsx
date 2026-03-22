@@ -15,14 +15,19 @@ interface RenderShowcaseProps {
 
 function RenderCard({ item }: { item: RenderItem }) {
   return (
-    <div className="flex flex-col h-[360px] rounded-md overflow-hidden border border-[#e3e9ee] bg-white shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
-      <div className="relative h-[304px]">
+    <div className="flex flex-col rounded-md overflow-hidden border border-[#e3e9ee] bg-white shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
+      <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-[#f1f4f7]">
         {item.image ? (
-          <Image src={item.image} alt="" fill className="object-cover object-[center_40%]" quality={100} />
+          <Image
+            src={item.image}
+            alt=""
+            fill
+            sizes="(max-width:768px) 85vw, 320px"
+            className="object-cover object-center"
+            quality={100}
+          />
         ) : (
-          <div className="w-full h-full bg-navy-50 flex items-center justify-center text-navy-400 text-sm">
-            Görsel
-          </div>
+          <div className="absolute inset-0 bg-[#eef2f6]" aria-hidden />
         )}
       </div>
       <div className="min-h-[56px] flex items-center justify-center px-4 text-center shrink-0 border-t border-[#e8edf2]">
