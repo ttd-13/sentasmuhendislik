@@ -3,63 +3,82 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
+type FormStatus = 'idle' | 'loading' | 'success' | 'error';
+
+/** Test: e-posta alanına tam olarak error@test.com yazıldığında hata senaryosu üretilir. */
+const ERROR_TRIGGER_EMAIL = 'error@test.com';
+
 export default function ContactForm() {
   const t = useTranslations('contact.form');
   const [formData, setFormData] = useState({
     name: '',
-    company: '',
     email: '',
-    projectSummary: '',
-    timeline: '',
-    budget: '',
+    message: '',
   });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<FormStatus>('idle');
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('sending');
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        setStatus('success');
-        setFormData({
-          name: '',
-          company: '',
-          email: '',
-          projectSummary: '',
-          timeline: '',
-          budget: '',
-        });
-      } else {
-        setStatus('error');
-      }
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setStatus('error');
+  const resetFeedback = () => {
+    if (status === 'success' || status === 'error') {
+      setStatus('idle');
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (status === 'loading') return;
+
+    setStatus('loading');
+
+    const simulateError =
+      formData.email.trim().toLowerCase() === ERROR_TRIGGER_EMAIL;
+
+    window.setTimeout(() => {
+      if (simulateError) {
+        setStatus('error');
+        return;
+      }
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    }, 1000);
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    resetFeedback();
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
+  const inputClass =
+    'w-full px-4 py-3 border border-navy-200/90 rounded-md bg-white text-navy-900 placeholder:text-navy-400 transition-shadow focus:ring-2 focus:ring-cyan-500/35 focus:border-cyan-500 outline-none text-[15px] disabled:opacity-60 disabled:cursor-not-allowed';
+
+  const isLoading = status === 'loading';
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {status === 'success' && (
+        <div
+          role="status"
+          className="p-4 rounded-md border border-emerald-200 bg-emerald-50 text-emerald-900 text-sm leading-relaxed"
+        >
+          {t('success')}
+        </div>
+      )}
+
+      {status === 'error' && (
+        <div
+          role="alert"
+          className="p-4 rounded-md border border-red-200 bg-red-50 text-red-900 text-sm leading-relaxed"
+        >
+          {t('error')}
+        </div>
+      )}
+
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-navy-900 mb-2">
+        <label htmlFor="name" className="block text-sm font-medium text-navy-800 mb-2">
           {t('name')}
         </label>
         <input
@@ -67,29 +86,16 @@ export default function ContactForm() {
           id="name"
           name="name"
           required
+          autoComplete="name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
+          disabled={isLoading}
+          className={inputClass}
         />
       </div>
 
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-navy-900 mb-2">
-          {t('company')}
-        </label>
-        <input
-          type="text"
-          id="company"
-          name="company"
-          required
-          value={formData.company}
-          onChange={handleChange}
-          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-navy-900 mb-2">
+        <label htmlFor="email" className="block text-sm font-medium text-navy-800 mb-2">
           {t('email')}
         </label>
         <input
@@ -97,74 +103,36 @@ export default function ContactForm() {
           id="email"
           name="email"
           required
+          autoComplete="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
+          disabled={isLoading}
+          className={inputClass}
         />
       </div>
 
       <div>
-        <label htmlFor="projectSummary" className="block text-sm font-medium text-navy-900 mb-2">
-          {t('projectSummary')}
+        <label htmlFor="message" className="block text-sm font-medium text-navy-800 mb-2">
+          {t('message')}
         </label>
         <textarea
-          id="projectSummary"
-          name="projectSummary"
+          id="message"
+          name="message"
           required
-          rows={4}
-          value={formData.projectSummary}
+          rows={8}
+          value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
+          disabled={isLoading}
+          className={`${inputClass} resize-y min-h-[200px]`}
         />
       </div>
-
-      <div>
-        <label htmlFor="timeline" className="block text-sm font-medium text-navy-900 mb-2">
-          {t('timeline')}
-        </label>
-        <input
-          type="text"
-          id="timeline"
-          name="timeline"
-          required
-          value={formData.timeline}
-          onChange={handleChange}
-          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="budget" className="block text-sm font-medium text-navy-900 mb-2">
-          {t('budget')}
-        </label>
-        <input
-          type="text"
-          id="budget"
-          name="budget"
-          value={formData.budget}
-          onChange={handleChange}
-          className="w-full px-4 py-2.5 border border-navy-200 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 outline-none"
-        />
-      </div>
-
-      {status === 'success' && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-md text-green-800">
-          {t('success')}
-        </div>
-      )}
-
-      {status === 'error' && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-md text-red-800">
-          {t('error')}
-        </div>
-      )}
 
       <button
         type="submit"
-        disabled={status === 'sending'}
-        className="w-full px-6 py-3 bg-cyan-500 text-white font-medium rounded-md hover:bg-cyan-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        disabled={isLoading}
+        className="w-full px-6 py-3.5 bg-navy-800 text-white text-[15px] font-medium rounded-md border border-navy-700 hover:bg-navy-700 focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-navy-800"
       >
-        {status === 'sending' ? t('sending') : t('submit')}
+        {isLoading ? t('sending') : t('submit')}
       </button>
     </form>
   );

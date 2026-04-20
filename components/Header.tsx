@@ -164,7 +164,8 @@ export default function Header() {
     incoming: MegaPreviewVisualId;
     outgoing: MegaPreviewVisualId | null;
   }>({ incoming: 'logo', outgoing: null });
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileSubmenu, setMobileSubmenu] = useState<'main' | 'services'>('main');
 
   const desktopWrapRef = useRef<HTMLDivElement>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -219,7 +220,8 @@ export default function Header() {
 
   useEffect(() => {
     setDesktopServicesOpen(false);
-    setMobileServicesOpen(false);
+    setMobileMenuOpen(false);
+    setMobileSubmenu('main');
   }, [pathname]);
 
   useEffect(() => {
@@ -284,6 +286,19 @@ export default function Header() {
 
   useEffect(() => () => clearCloseTimer(), []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) setMobileSubmenu('main');
+  }, [mobileMenuOpen]);
+
   const switchLocale = (newLocale: string) => {
     if (!mounted) return;
     const targetLocale = newLocale as Locale;
@@ -335,14 +350,11 @@ export default function Header() {
                   onMouseEnter={openDesktopServices}
                   onMouseLeave={scheduleCloseDesktopServices}
                 >
-                  <button
-                    type="button"
+                  <Link
+                    href={item.href}
                     className={linkClass}
-                    aria-expanded={desktopServicesOpen}
-                    aria-haspopup="true"
-                    aria-controls="nav-services-mega"
                     id="nav-services-trigger"
-                    onClick={toggleDesktopServices}
+                    scroll
                     onKeyDown={(e) => {
                       if (e.key === 'ArrowDown') {
                         e.preventDefault();
@@ -351,24 +363,11 @@ export default function Header() {
                         requestAnimationFrame(() => {
                           document.getElementById('nav-services-first')?.focus();
                         });
-                        return;
-                      }
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        if (desktopServicesOpen) {
-                          setDesktopServicesOpen(false);
-                        } else {
-                          clearCloseTimer();
-                          setDesktopServicesOpen(true);
-                          requestAnimationFrame(() => {
-                            document.getElementById('nav-services-first')?.focus();
-                          });
-                        }
                       }
                     }}
                   >
                     {tNav('services')}
-                  </button>
+                  </Link>
                   {desktopServicesOpen ? (
                     <div
                       aria-hidden
@@ -461,7 +460,35 @@ export default function Header() {
             )}
           </nav>
 
-          <div className="flex items-center space-x-4">
+          <button
+            type="button"
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-[#2a292a] hover:bg-[#f5f5f5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0089b6] focus-visible:ring-offset-2"
+            aria-label={mobileMenuOpen ? (locale === 'tr' ? 'Menüyü kapat' : 'Close menu') : (locale === 'tr' ? 'Menüyü aç' : 'Open menu')}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-drawer"
+            onClick={() => setMobileMenuOpen((v) => !v)}
+          >
+            <span className="sr-only">{locale === 'tr' ? 'Mobil menü' : 'Mobile menu'}</span>
+            <span className="relative block w-5 h-4">
+              <span
+                className={`absolute left-0 top-0 h-[2px] w-5 bg-current transition-transform duration-200 ${
+                  mobileMenuOpen ? 'translate-y-[6px] rotate-45' : ''
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-[6px] h-[2px] w-5 bg-current transition-opacity duration-200 ${
+                  mobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-[12px] h-[2px] w-5 bg-current transition-transform duration-200 ${
+                  mobileMenuOpen ? '-translate-y-[6px] -rotate-45' : ''
+                }`}
+              />
+            </span>
+          </button>
+
+          <div className="hidden md:flex items-center space-x-4">
             <button
               type="button"
               onClick={() => switchLocale('tr')}
@@ -484,69 +511,154 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <nav className="md:hidden border-t border-[#e5e5e5] bg-white" aria-label={tNav('mainNav')}>
-        <div className="container mx-auto px-4 py-3 space-y-1">
-          {navItems.map((item) =>
-            item.key === 'services' ? (
-              <div key={item.key} className="border-b border-[#f0f0f0] pb-2 mb-1 last:border-0">
-                <button
-                  type="button"
-                  className={`w-full py-2 text-left ${linkClass}`}
-                  aria-expanded={mobileServicesOpen}
-                  aria-controls="nav-mobile-services-panel"
-                  id="nav-mobile-services-trigger"
-                  onClick={() => setMobileServicesOpen((v) => !v)}
-                >
-                  {tNav('services')}
-                </button>
+      {/* Mobile drawer */}
+      <div
+        className={`fixed inset-0 z-[70] md:hidden ${mobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+        aria-hidden={!mobileMenuOpen}
+      >
+        <button
+          type="button"
+          className={`absolute inset-0 bg-black/30 transition-opacity duration-200 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
+          aria-label={locale === 'tr' ? 'Menüyü kapat' : 'Close menu'}
+          onClick={() => setMobileMenuOpen(false)}
+        />
+        <aside
+          id="mobile-nav-drawer"
+          className={`absolute inset-y-0 left-0 w-[86%] max-w-sm bg-white border-r border-[#e5e5e5] shadow-sm transition-transform duration-200 ease-out ${
+            mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
+        >
+          <div className="h-full flex flex-col">
+            <div className="flex items-center justify-between px-4 h-16 border-b border-[#e5e5e5]">
+              <Link href={`/${locale}`} onClick={() => setMobileMenuOpen(false)}>
+                <img src="/SENTAS-logo.png" alt="SENTAS Mühendislik Logo" className="h-10 w-auto object-contain" />
+              </Link>
+              <button
+                type="button"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-md text-[#2a292a] hover:bg-[#f5f5f5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0089b6] focus-visible:ring-offset-2"
+                aria-label={locale === 'tr' ? 'Menüyü kapat' : 'Close menu'}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="text-xl leading-none">×</span>
+              </button>
+            </div>
+
+            <nav className="px-4 py-4 space-y-1" aria-label={tNav('mainNav')}>
+              <div className="relative overflow-hidden min-h-[240px]">
                 <div
-                  id="nav-mobile-services-panel"
-                  role="region"
-                  aria-labelledby="nav-mobile-services-trigger"
-                  hidden={!mobileServicesOpen}
-                  className={mobileServicesOpen ? 'mt-2 space-y-3 border-l-2 border-[#e8eef2] pl-3' : ''}
+                  className={`transition-transform duration-200 ease-out ${
+                    mobileSubmenu === 'main' ? 'translate-x-0' : '-translate-x-full'
+                  }`}
                 >
-                  {mobileServicesOpen ? (
-                    <>
+                  {navItems.map((item) =>
+                    item.key === 'services' ? (
+                      <div key={item.key} className="flex items-center justify-between gap-2 py-1">
+                        <button
+                          type="button"
+                          className="flex-1 py-2 text-left text-sm font-medium text-[#2a292a] hover:text-[#0089b6] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0089b6] focus-visible:ring-offset-2 rounded-sm"
+                          aria-expanded={mobileSubmenu === 'services'}
+                          aria-controls="mobile-services-submenu"
+                          onClick={() => setMobileSubmenu('services')}
+                        >
+                          {tNav(item.key)}
+                        </button>
+                        <button
+                          type="button"
+                          className="inline-flex items-center justify-center w-9 h-9 rounded-md text-[#2a292a] hover:bg-[#f5f5f5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0089b6] focus-visible:ring-offset-2"
+                          aria-label={locale === 'tr' ? 'Hizmetler alt menüsünü aç' : 'Open services submenu'}
+                          onClick={() => setMobileSubmenu('services')}
+                        >
+                          <svg className="w-4 h-4" viewBox="0 0 20 20" fill="none" aria-hidden>
+                            <path
+                              d="M7 4.5 12.5 10 7 15.5"
+                              stroke="currentColor"
+                              strokeWidth="1.75"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    ) : (
+                      <Link
+                        key={item.key}
+                        href={item.href}
+                        className="block py-3 text-sm font-medium text-[#2a292a] hover:text-[#0089b6] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0089b6] focus-visible:ring-offset-2 rounded-sm"
+                        onClick={() => setMobileMenuOpen(false)}
+                        scroll
+                      >
+                        {tNav(item.key)}
+                      </Link>
+                    ),
+                  )}
+                </div>
+
+                <div
+                  className={`absolute inset-0 transition-transform duration-200 ease-out ${
+                    mobileSubmenu === 'services' ? 'translate-x-0' : 'translate-x-full'
+                  }`}
+                >
+                  <div id="mobile-services-submenu" className="py-1">
+                    <button
+                      type="button"
+                      className="inline-flex items-center gap-2 py-2 text-sm font-medium text-[#2a292a] hover:text-[#0089b6] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0089b6] focus-visible:ring-offset-2 rounded-sm"
+                      onClick={() => setMobileSubmenu('main')}
+                    >
+                      <svg className="w-4 h-4" viewBox="0 0 20 20" fill="none" aria-hidden>
+                        <path
+                          d="M13 4.5 7.5 10 13 15.5"
+                          stroke="currentColor"
+                          strokeWidth="1.75"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      {locale === 'tr' ? 'Geri' : 'Back'}
+                    </button>
+                    <div className="mt-2">
                       {serviceMegaItems.map((sub) => (
                         <Link
                           key={sub.id}
                           href={sub.href}
-                          className={`${megaLinkClass} !py-2.5`}
-                          onClick={() => setMobileServicesOpen(false)}
+                          className="block py-3 text-sm font-medium text-[#2a292a] hover:text-[#0089b6] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0089b6] focus-visible:ring-offset-2 rounded-sm"
+                          onClick={() => {
+                            setMobileSubmenu('main');
+                            setMobileMenuOpen(false);
+                          }}
+                          scroll
                         >
-                          <span className="block text-sm font-semibold leading-snug text-[#2a292a]">
-                            {serviceMegaTitle(sub.id, sub.title, locale)}
-                          </span>
+                          {serviceMegaTitle(sub.id, sub.title, locale)}
                         </Link>
                       ))}
-                      <div
-                        className="mx-auto mt-3 w-full max-w-[18rem] sm:max-w-sm"
-                        aria-hidden="true"
-                      >
-                        <div className="flex aspect-[4/3] w-full items-center justify-center rounded-md border border-dashed border-[#e0e4e8] bg-[#f7f9fb]">
-                          <span className="px-2 text-center text-[10px] font-medium uppercase tracking-wider text-[#9ca3af]">
-                            {locale === 'tr' ? 'Görsel alanı' : 'Image area'}
-                          </span>
-                        </div>
-                      </div>
-                    </>
-                  ) : null}
+                    </div>
+                  </div>
                 </div>
               </div>
-            ) : (
-              <Link
-                key={item.key}
-                href={item.href}
-                className="block py-2 text-sm font-medium text-[#2a292a] hover:text-[#0089b6] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0089b6] focus-visible:ring-offset-2 rounded-sm"
+            </nav>
+
+            <div className="mt-auto border-t border-[#e5e5e5] p-4 flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => switchLocale('tr')}
+                className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0089b6] focus-visible:ring-offset-2 ${
+                  locale === 'tr' ? 'bg-[#2a292a] text-white' : 'text-[#2a292a] hover:bg-[#f5f5f5]'
+                }`}
               >
-                {tNav(item.key)}
-              </Link>
-            ),
-          )}
-        </div>
-      </nav>
+                TR
+              </button>
+              <button
+                type="button"
+                onClick={() => switchLocale('en')}
+                className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0089b6] focus-visible:ring-offset-2 ${
+                  locale === 'en' ? 'bg-[#2a292a] text-white' : 'text-[#2a292a] hover:bg-[#f5f5f5]'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
     </header>
   );
 }

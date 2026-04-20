@@ -54,7 +54,7 @@ export default async function HizmetlerPage({
               {t(`${service.key}.title`)}
             </h2>
 
-            <div className="space-y-8">
+            <div className="space-y-7">
               <div>
                 <h3 className="text-xl font-semibold text-navy-900 mb-3">
                   {t(`${service.key}.whatWeDo`)}
@@ -101,14 +101,6 @@ export default async function HizmetlerPage({
                 </p>
               </div>
 
-              <div className="p-6 bg-cyan-50 rounded-lg border border-cyan-200">
-                <h3 className="text-lg font-semibold text-navy-900 mb-2">
-                  {t(`${service.key}.whenToInvolve`)}
-                </h3>
-                <p className="text-navy-700">
-                  {t(`${service.key}.whenToInvolveText`)}
-                </p>
-              </div>
             </div>
           </div>
         </Section>

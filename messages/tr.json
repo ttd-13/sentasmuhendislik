@@ -189,19 +189,19 @@
       "whenToInvolveText": "PCB tasarımı ve mekanik kasa tasarımı paralel ilerlerken entegrasyon çalışmalarına başlayın. Erken koordinasyon, revizyon maliyetlerini düşürür."
     },
     "prototyping": {
-      "title": "Hızlı Prototipleme ve Üretim Desteği",
+      "title": "Tasarım Doğrulama ve Üretime Hazırlık",
       "whatWeDo": "Ne Yapıyoruz",
-      "whatWeDoText": "3D yazdırma ve CNC işleme ile hızlı prototip üretimi gerçekleştiriyoruz. Prototip testleri ile tasarım doğrulaması yapıyoruz. Seri üretime geçiş için üretim hazırlık dokümantasyonu ve tedarikçi koordinasyonu sağlıyoruz.",
+      "whatWeDoText": "Tasarımın teknik gerekliliklere ve üretim beklentilerine uygunluğunu doğruluyoruz. Prototip testleri, montaj kontrolü, üretim öncesi gözden geçirmeler ve dokümantasyon hazırlığı ile ürünün üretime daha hazır hale gelmesini sağlıyoruz.",
       "problems": "Çözdüğümüz Sorunlar",
       "problemsList": [
-        "Prototip üretim süreçlerinin uzaması",
-        "Tasarım doğrulama eksikliği",
-        "Seri üretime geçiş zorlukları",
-        "Kalite kontrol standartlarının belirsizliği",
-        "Tedarikçi koordinasyon sorunları"
+        "Tasarımın üretime geçmeden önce yeterince doğrulanmaması",
+        "Montaj ve entegrasyon problemlerinin geç fark edilmesi",
+        "Prototip sonrası revizyonların kontrolsüz ilerlemesi",
+        "Üretim öncesi dokümantasyon eksiklikleri",
+        "Seri üretime geçişte hazırlık yetersizliği"
       ],
       "approach": "Yaklaşımımız",
-      "approachText": "Hızlı prototipleme yöntemlerini kullanarak, tasarım iterasyonlarını hızlandırıyoruz. Prototip testleri ile fonksiyonel ve mekanik doğrulama yapıyoruz. Seri üretim için gerekli dokümantasyonu hazırlayarak, üretim sürecine geçişi kolaylaştırıyoruz.",
+      "approachText": "Tasarım doğrulama sürecini yalnızca test aşaması olarak değil, üretime hazırlığın kritik bir parçası olarak ele alıyoruz. Prototip değerlendirmeleri, montaj kontrolleri ve üretim öncesi teknik gözden geçirmeler ile ürünün daha güvenli ve kontrollü şekilde üretime aktarılmasını destekliyoruz.",
       "whenToInvolve": "Ne Zaman Bize Başvurmalısınız",
       "whenToInvolveText": "Tasarım doğrulama aşamasında prototip üretimine başlayın. Erken prototipleme, tasarım hatalarının erken tespitini sağlar."
     }
@@ -277,6 +277,12 @@
       "title": "Hikayemiz",
       "text": "SENTAS Mühendislik, elektronik ürün geliştirme süreçlerinde mekanik entegrasyon ve termal tasarım alanlarında uzmanlaşmış bir mühendislik firmasıdır. Tasarım aşamasında tespit edilen ve çözülen sorunların, üretim sonrası maliyetli revizyonları önlediğine inanıyoruz. Bu nedenle, erken katılım ve sistematik yaklaşım ile müşterilerimizin ürün geliştirme süreçlerini hızlandırıyor ve maliyetlerini optimize ediyoruz."
     },
+    "missionVision": {
+      "missionTitle": "Misyon",
+      "missionText": "Elektronik sistemler için mekanik tasarım, termal analiz ve entegrasyon süreçlerinde güvenilir, uygulanabilir ve üretilebilir çözümler sunarak, ürün geliştirme süreçlerini hızlandırmak ve teknik riskleri en aza indirmek.",
+      "visionTitle": "Vizyon",
+      "visionText": "Elektronik ürün geliştirme alanında, mekanik tasarım ve termal mühendislik konularında uzmanlaşmış, yenilikçi ve güvenilir bir mühendislik çözüm ortağı olmak."
+    },
     "values": {
       "title": "Değerlerimiz",
       "items": {
@@ -306,57 +312,21 @@
     }
   },
   "contact": {
-    "title": "İletişim",
-    "subtitle": "Projenizi birlikte geliştirelim",
+    "pageTitle": "İletişim",
+    "locationLabel": "Konum",
+    "emailLabel": "E-posta",
+    "linkedinLabelHeading": "LinkedIn",
+    "location": "Istanbul / Türkiye",
+    "linkedinLabel": "SENTAS Mühendislik",
+    "footerNote": "Taleplerinize mümkün olan en kısa sürede e-mail üzerinden dönüş yapıyoruz.",
     "form": {
       "name": "Ad Soyad",
-      "company": "Şirket",
       "email": "E-posta",
-      "projectSummary": "Proje Özeti",
-      "timeline": "Zaman Çizelgesi",
-      "budget": "Bütçe (Opsiyonel)",
+      "message": "Mesaj",
       "submit": "Gönder",
       "sending": "Gönderiliyor...",
-      "success": "Mesajınız gönderildi. En kısa sürede size dönüş yapacağız.",
-      "error": "Bir hata oluştu. Lütfen tekrar deneyin."
-    },
-    "faq": {
-      "title": "Sık Sorulan Sorular",
-      "items": {
-        "q1": {
-          "question": "Proje süresi ne kadar?",
-          "answer": "Proje süresi, projenin kapsamına ve karmaşıklığına bağlıdır. Basit kasa tasarımları 2-4 hafta, termal analiz projeleri 3-6 hafta, kompleks entegrasyon projeleri ise 6-12 hafta sürebilir."
-        },
-        "q2": {
-          "question": "Hangi CAD formatlarını kullanıyorsunuz?",
-          "answer": "SolidWorks, CATIA, Creo ve Fusion 360 gibi yaygın CAD yazılımlarını kullanıyoruz. Teslim formatları STEP, IGES ve native CAD formatlarını içerir."
-        },
-        "q3": {
-          "question": "Prototip üretimi yapıyor musunuz?",
-          "answer": "Evet, 3D yazdırma ve CNC işleme ile prototip üretimi yapıyoruz. Ayrıca tedarikçi ağımız aracılığıyla seri üretim desteği de sağlıyoruz."
-        },
-        "q4": {
-          "question": "Uzaktan çalışma yapabiliyor musunuz?",
-          "answer": "Evet, projelerin büyük bir kısmını uzaktan yürütüyoruz. Gerekli durumlarda yerinde görüşmeler ve testler için seyahat edebiliriz."
-        }
-      }
-    },
-    "whatHappensNext": {
-      "title": "Sonraki Adımlar",
-      "steps": {
-        "step1": {
-          "title": "1. İletişime Geçin",
-          "description": "İletişim formunu doldurun veya e-posta gönderin."
-        },
-        "step2": {
-          "title": "2. Görüşme",
-          "description": "Projenizi detaylı olarak görüşmek için bir toplantı planlayalım."
-        },
-        "step3": {
-          "title": "3. Teklif ve Başlangıç",
-          "description": "Detaylı bir teklif hazırlayıp, projeye başlayalım."
-        }
-      }
+      "success": "Mesajınız başarıyla gönderildi. En kısa sürede dönüş yapacağız.",
+      "error": "Bir hata oluştu, lütfen tekrar deneyin."
     }
   },
   "footer": {

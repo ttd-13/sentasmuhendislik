@@ -26,13 +26,6 @@ export default async function HakkimizdaPage({
 
   const t = await getTranslations('about');
 
-  const values = [
-    'technicalDepth',
-    'practicalExperience',
-    'systematicApproach',
-    'transparentCommunication'
-  ];
-
   return (
     <>
       <Section background="pattern" className="pt-24 pb-16">
@@ -40,64 +33,39 @@ export default async function HakkimizdaPage({
           <h1 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
             {t('title')}
           </h1>
-          <p className="text-xl text-navy-600">{t('subtitle')}</p>
-        </div>
-      </Section>
-
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-navy-900 mb-6">
-            {t('story.title')}
-          </h2>
-          <p className="text-lg text-navy-700 leading-relaxed">
-            {t('story.text')}
+          <p className="text-lg md:text-xl text-navy-600 leading-relaxed">
+            SENTAS Mühendislik, elektronik sistemler için mekanik tasarım,
+            termal analiz ve entegrasyon süreçlerinde daha uygulanabilir,
+            güvenilir ve üretilebilir çözümler geliştirme hedefiyle
+            kurulmuştur. Ürün geliştirme süreçlerinde karşılaşılan mekanik ve
+            ısıl problemleri erken aşamada ele alarak, tasarım doğruluğunu
+            artırmayı ve mühendislik risklerini minimize etmeyi amaçlarız.
           </p>
         </div>
       </Section>
 
-      <Section background="gray">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-navy-900 mb-8 text-center">
-            {t('values.title')}
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {values.map((key) => (
-              <div
-                key={key}
-                className="p-6 bg-white rounded-lg border border-navy-200"
-              >
-                <h3 className="text-xl font-semibold text-navy-900 mb-3">
-                  {t(`values.items.${key}.title`)}
-                </h3>
-                <p className="text-navy-700">
-                  {t(`values.items.${key}.description`)}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-navy-900 mb-6 text-center">
-            {t('roles.title')}
-          </h2>
-          <div className="grid grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-navy-50 rounded-lg">
-              <h3 className="font-semibold text-navy-900 mb-2">
-                {t('roles.mechanicalEngineer')}
-              </h3>
+      <Section className="!py-10 lg:!py-12">
+        <div className="max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+            <div className="text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-3">
+                Misyon
+              </h2>
+              <p className="text-navy-700 leading-relaxed max-w-md mx-auto">
+                Elektronik sistemler için mekanik tasarım ve termal analiz
+                süreçlerinde, uygulanabilirliği yüksek, güvenilir ve üretilebilir
+                mühendislik çözümleri sunuyoruz.
+              </p>
             </div>
-            <div className="text-center p-6 bg-navy-50 rounded-lg">
-              <h3 className="font-semibold text-navy-900 mb-2">
-                {t('roles.thermalEngineer')}
-              </h3>
-            </div>
-            <div className="text-center p-6 bg-navy-50 rounded-lg">
-              <h3 className="font-semibold text-navy-900 mb-2">
-                {t('roles.projectManager')}
-              </h3>
+            <div className="text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-3">
+                Vizyon
+              </h2>
+              <p className="text-navy-700 leading-relaxed max-w-md mx-auto">
+                Elektronik ürün geliştirme alanında, teknik yetkinliği,
+                güvenilir yaklaşımı ve çözüm odaklı bakış açısıyla öne çıkan bir
+                mühendislik partneri olmayı hedefliyoruz.
+              </p>
             </div>
           </div>
         </div>
