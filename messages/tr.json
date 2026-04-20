@@ -14,6 +14,8 @@
       "ctaPrimary": "Projenizi Paylaşın",
       "ctaSecondary": "Çalışma Alanlarımız"
     },
+    "solutionExamples": "Çözüm Örnekleri",
+
     "renders": {
       "prev": "Önceki",
       "next": "Sonraki",
@@ -66,6 +68,7 @@
           "title": "Tasarım Doğrulama ve Üretime Hazırlık",
           "description": "Tasarımın üretim öncesi doğrulanması için montaj, erişim ve uygulanabilirlik kontrollerini gerçekleştiririz."
         }
+
       }
     },
     "whySentas": {
