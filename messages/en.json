@@ -321,15 +321,16 @@
     "linkedinLabelHeading": "LinkedIn",
     "location": "Istanbul / Türkiye",
     "linkedinLabel": "SENTAS Mühendislik",
-    "footerNote": "We respond to inquiries by email as soon as we can.",
     "form": {
       "name": "Full name",
       "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
       "message": "Message",
       "submit": "Submit",
       "sending": "Sending...",
-      "success": "Your message was sent successfully. We will get back to you as soon as possible.",
-      "error": "Something went wrong. Please try again."
+      "success": "Your message has been sent successfully. We will get back to you shortly.",
+      "error": "An error occurred while sending your message. Please try again."
     }
   },
   "footer": {

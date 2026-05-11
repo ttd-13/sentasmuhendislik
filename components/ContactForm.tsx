@@ -5,41 +5,74 @@ import { useTranslations } from 'next-intl';
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
-/** Test: e-posta alanına tam olarak error@test.com yazıldığında hata senaryosu üretilir. */
-const ERROR_TRIGGER_EMAIL = 'error@test.com';
-
 export default function ContactForm() {
   const t = useTranslations('contact.form');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    company: '',
     message: '',
   });
   const [status, setStatus] = useState<FormStatus>('idle');
+  const [clientError, setClientError] = useState<string | null>(null);
 
   const resetFeedback = () => {
     if (status === 'success' || status === 'error') {
       setStatus('idle');
     }
+    if (clientError) {
+      setClientError(null);
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (status === 'loading') return;
 
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const message = formData.message.trim();
+
+    if (!name || !email || !message) {
+      setClientError(t('requiredFieldsError'));
+      setStatus('idle');
+      return;
+    }
+
     setStatus('loading');
 
-    const simulateError =
-      formData.email.trim().toLowerCase() === ERROR_TRIGGER_EMAIL;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: formData.phone.trim() || undefined,
+          company: formData.company.trim() || undefined,
+          message,
+        }),
+      });
 
-    window.setTimeout(() => {
-      if (simulateError) {
+      if (!response.ok) {
         setStatus('error');
         return;
       }
+
+      const data = (await response.json()) as { success?: boolean };
+      if (!data?.success) {
+        setStatus('error');
+        return;
+      }
+
       setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    }, 1000);
+      setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+    } catch {
+      setStatus('error');
+    }
   };
 
   const handleChange = (
@@ -57,8 +90,23 @@ export default function ContactForm() {
 
   const isLoading = status === 'loading';
 
+  const requiredMark = (
+    <span aria-hidden className="text-red-600 font-semibold ml-1">
+      *
+    </span>
+  );
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {clientError && (
+        <div
+          role="alert"
+          className="p-4 rounded-md border border-red-200 bg-red-50 text-red-900 text-sm leading-relaxed"
+        >
+          {clientError}
+        </div>
+      )}
+
       {status === 'success' && (
         <div
           role="status"
@@ -80,6 +128,7 @@ export default function ContactForm() {
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-navy-800 mb-2">
           {t('name')}
+          {requiredMark}
         </label>
         <input
           type="text"
@@ -97,6 +146,7 @@ export default function ContactForm() {
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-navy-800 mb-2">
           {t('email')}
+          {requiredMark}
         </label>
         <input
           type="email"
@@ -112,8 +162,41 @@ export default function ContactForm() {
       </div>
 
       <div>
+        <label htmlFor="phone" className="block text-sm font-medium text-navy-800 mb-2">
+          {t('phone')}
+        </label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          autoComplete="tel"
+          value={formData.phone}
+          onChange={handleChange}
+          disabled={isLoading}
+          className={inputClass}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="company" className="block text-sm font-medium text-navy-800 mb-2">
+          {t('company')}
+        </label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          autoComplete="organization"
+          value={formData.company}
+          onChange={handleChange}
+          disabled={isLoading}
+          className={inputClass}
+        />
+      </div>
+
+      <div>
         <label htmlFor="message" className="block text-sm font-medium text-navy-800 mb-2">
           {t('message')}
+          {requiredMark}
         </label>
         <textarea
           id="message"

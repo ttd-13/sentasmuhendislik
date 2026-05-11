@@ -321,15 +321,16 @@
     "linkedinLabelHeading": "LinkedIn",
     "location": "Istanbul / Türkiye",
     "linkedinLabel": "SENTAS Mühendislik",
-    "footerNote": "Taleplerinize mümkün olan en kısa sürede e-mail üzerinden dönüş yapıyoruz.",
     "form": {
       "name": "Ad Soyad",
       "email": "E-posta",
+      "phone": "Telefon",
+      "company": "Şirket",
       "message": "Mesaj",
       "submit": "Gönder",
       "sending": "Gönderiliyor...",
-      "success": "Mesajınız başarıyla gönderildi. En kısa sürede dönüş yapacağız.",
-      "error": "Bir hata oluştu, lütfen tekrar deneyin."
+      "success": "Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.",
+      "error": "Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin."
     }
   },
   "footer": {

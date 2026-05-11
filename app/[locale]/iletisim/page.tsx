@@ -144,10 +144,6 @@ export default async function IletisimPage({
             <ContactForm />
           </div>
         </div>
-
-        <p className="mt-14 text-center text-sm text-white/55 max-w-xl mx-auto leading-relaxed">
-          {t('footerNote')}
-        </p>
       </div>
     </Section>
   );
